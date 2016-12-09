@@ -112,7 +112,40 @@ webpackJsonp([0],[
 				return (0, _preact.h)(
 					'header',
 					null,
-					(0, _preact.h)('nav', null)
+					(0, _preact.h)(
+						'nav',
+						null,
+						(0, _preact.h)(
+							'div',
+							{ className: 'logo link' },
+							'LOGO'
+						),
+						(0, _preact.h)(
+							'a',
+							{ href: '#', className: 'link boldFont' },
+							'HOME'
+						),
+						(0, _preact.h)(
+							'a',
+							{ href: '#', className: 'link boldFont' },
+							'SPONSORS'
+						),
+						(0, _preact.h)(
+							'a',
+							{ href: '#', className: 'link boldFont' },
+							'PARTNERS'
+						),
+						(0, _preact.h)(
+							'a',
+							{ href: '#', className: 'link boldFont' },
+							'AWARDS'
+						),
+						(0, _preact.h)(
+							'a',
+							{ href: '#', className: 'link boldFont' },
+							'CONTACT US'
+						)
+					)
 				);
 			}
 		}]);
@@ -169,7 +202,8 @@ webpackJsonp([0],[
 				return (0, _preact.h)(
 					'div',
 					{ className: 'page-home' },
-					'HOME COMES HERE'
+					(0, _preact.h)('img', { 'class': 'cover', src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICYAH&w=1024&h=350' }),
+					(0, _preact.h)('div', { className: 'content-home' })
 				);
 			}
 		}]);
