@@ -7,6 +7,6 @@ const rootDir = './';
 app.use(compression());
 app.use(serveStatic(rootDir));
 
-app.listen(8080, ()=>{
+app.listen(process.env.PORT||8080, ()=>{
  console.log('Serving ${rootDir} at 8080');
 });
