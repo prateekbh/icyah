@@ -1,11 +1,15 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require('path');
 
 module.exports = {
-  entry: './index.js',
+  entry: {
+   app: './index.js',
+   vendor: './vendor.js'
+  },
   output: {
-    path: __dirname + '/public',
-    filename: 'bundle.js'
+    path: __dirname + '/public/js',
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -14,7 +18,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react'],
+          plugins:[
+            ["transform-react-jsx", { "pragma": "h" }]
+          ]
         }
       },
       {
@@ -27,6 +34,7 @@ module.exports = {
 	  ]
   },
   plugins: [
-      new ExtractTextPlugin("[name].css")
+      new ExtractTextPlugin("/css/[name].css"),
+      new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
   ]
 };
