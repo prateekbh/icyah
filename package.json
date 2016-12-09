@@ -23,7 +23,7 @@
     "preact-compat": "^3.9.4"
   },
   "scripts": {
-    "start": "preact-scripts start",
+    "start": "node server.js",
     "build": "webpack webpack.config.js",
     "eject": "preact-scripts eject",
     "test": "preact-scripts test"
