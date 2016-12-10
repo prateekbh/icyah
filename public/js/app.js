@@ -29,9 +29,11 @@ webpackJsonp([0],[
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _preact = __webpack_require__(1);
-
 	var _preactRouter = __webpack_require__(3);
+
+	var _preactRouter2 = _interopRequireDefault(_preactRouter);
+
+	var _preact = __webpack_require__(1);
 
 	var _Header = __webpack_require__(4);
 
@@ -44,6 +46,8 @@ webpackJsonp([0],[
 	var _Sponsors = __webpack_require__(12);
 
 	var _Sponsors2 = _interopRequireDefault(_Sponsors);
+
+	__webpack_require__(17);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -73,10 +77,10 @@ webpackJsonp([0],[
 	          'div',
 	          { className: 'route' },
 	          (0, _preact.h)(
-	            _preactRouter.Router,
-	            { onChange: this.onChange },
+	            _preactRouter2.default,
+	            null,
 	            (0, _preact.h)(_Home2.default, { path: '/' }),
-	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors/' })
+	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors' })
 	          )
 	        )
 	      );
@@ -626,6 +630,13 @@ webpackJsonp([0],[
 /***/ },
 /* 14 */,
 /* 15 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 16 */,
+/* 17 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

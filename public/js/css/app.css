@@ -44,14 +44,18 @@ header .link:hover{
 }
 
 .page.page-home .cover{
-	width: 100%;
+	width: 1024px;
 	height: 350px;
 }
 
 @media screen and (max-width: 1024px) {
 	.page-home .cover{
+		width: 100%;
 		height: auto;
 	}
+}.page{
+	max-width: 1024px;
+	margin: auto;
 }body {
   margin: 0;
   padding: 0;
