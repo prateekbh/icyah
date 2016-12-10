@@ -3,11 +3,13 @@ header{
 	height: 80px;
 	position: relative;
 	z-index: 1;
-	nav {
+
+	nav.desktop{
 		margin: auto;
 		text-align: left;
 		max-width: 1024px;
 	}
+
 	.link {
 		display: inline-block;
 		height: 80px;
@@ -19,6 +21,15 @@ header{
 		color: #fff;
 		&:hover{
 			background-color:rgba(255,255,255,0.5);
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	header{
+		background-color:transparent;
+		nav.desktop{
+			display: none;
 		}
 	}
 }
