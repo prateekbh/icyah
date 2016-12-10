@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import { Link } from 'preact-router';
 import './Header.css';
 export default class Header extends Component{
 	render(){
@@ -8,21 +9,21 @@ export default class Header extends Component{
 					<div className="logo link">
 						LOGO
 					</div>
-					<a href='/' className="link boldFont">
+					<Link href='/' className="link boldFont">
 						HOME
-					</a>
-					<a href='/sponsors' className="link boldFont">
+					</Link>
+					<Link href='/sponsors/' className="link boldFont">
 						SPONSORS
-					</a>
-					<a href='#' className="link boldFont">
+					</Link>
+					<Link href='/partners/' className="link boldFont">
 						PARTNERS
-					</a>
-					<a href='#' className="link boldFont">
+					</Link>
+					<Link href='/awards/' className="link boldFont">
 						AWARDS
-					</a>
-					<a href='#' className="link boldFont">
+					</Link>
+					<Link href='/contactus/' className="link boldFont">
 						CONTACT US
-					</a>
+					</Link>
 				</nav>
 			</header>
 
