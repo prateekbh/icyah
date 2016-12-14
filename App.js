@@ -3,6 +3,7 @@ import { h, Component } from 'preact';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Sponsors from './components/Sponsors/Sponsors';
+import './type.css';
 import './App.css';
 export default class App extends Component {
   render() {

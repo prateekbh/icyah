@@ -10,7 +10,7 @@ webpackJsonp([0],[
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(15);
+	__webpack_require__(19);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46,6 +46,8 @@ webpackJsonp([0],[
 	var _Sponsors = __webpack_require__(12);
 
 	var _Sponsors2 = _interopRequireDefault(_Sponsors);
+
+	__webpack_require__(15);
 
 	__webpack_require__(17);
 
@@ -447,53 +449,83 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var links = [{
+		link: '',
+		text: 'HOME'
+	}, {
+		link: 'sponsors',
+		text: 'SPONSORS'
+	}, {
+		link: 'partners',
+		text: 'PARTNERS'
+	}, {
+		link: 'awards',
+		text: 'AWARDS'
+	}, {
+		link: 'contactus',
+		text: 'CONTACT US'
+	}];
+
 	var Header = function (_Component) {
 		_inherits(Header, _Component);
 
 		function Header() {
 			_classCallCheck(this, Header);
 
-			return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
+
+			_this.state = {
+				sidebarOpened: false
+			};
+			return _this;
 		}
 
 		_createClass(Header, [{
+			key: 'toggleSideBar',
+			value: function toggleSideBar() {
+				this.setState({
+					sidebarOpened: !this.state.sidebarOpened
+				});
+			}
+		}, {
+			key: 'closeSideBar',
+			value: function closeSideBar() {
+				this.setState({
+					sidebarOpened: false
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
+
 				return (0, _preact.h)(
 					'header',
 					null,
 					(0, _preact.h)(
 						'nav',
-						{ className: 'desktop' },
+						{ className: 'sidebar ' + (this.state.sidebarOpened ? 'opened' : '') },
 						(0, _preact.h)(
 							'div',
 							{ className: 'logo link' },
 							'LOGO'
 						),
+						links.map(function (item) {
+							return (0, _preact.h)(
+								_preactRouter.Link,
+								{ href: "/" + item.link, className: 'link boldFont', onClick: _this2.closeSideBar.bind(_this2) },
+								item.text
+							);
+						})
+					),
+					(0, _preact.h)(
+						'i',
+						{ className: 'sidebar-switch', onClick: this.toggleSideBar.bind(this) },
 						(0, _preact.h)(
-							_preactRouter.Link,
-							{ href: '/', className: 'link boldFont' },
-							'HOME'
-						),
-						(0, _preact.h)(
-							_preactRouter.Link,
-							{ href: '/sponsors/', className: 'link boldFont' },
-							'SPONSORS'
-						),
-						(0, _preact.h)(
-							_preactRouter.Link,
-							{ href: '/partners/', className: 'link boldFont' },
-							'PARTNERS'
-						),
-						(0, _preact.h)(
-							_preactRouter.Link,
-							{ href: '/awards/', className: 'link boldFont' },
-							'AWARDS'
-						),
-						(0, _preact.h)(
-							_preactRouter.Link,
-							{ href: '/contactus/', className: 'link boldFont' },
-							'CONTACT US'
+							'svg',
+							{ fill: '#000000', height: '24', viewBox: '0 0 24 24', width: '24' },
+							(0, _preact.h)('path', { d: 'M0 0h24v24H0z', fill: 'none' }),
+							(0, _preact.h)('path', { d: 'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z' })
 						)
 					)
 				);
@@ -637,6 +669,13 @@ webpackJsonp([0],[
 /***/ },
 /* 16 */,
 /* 17 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 18 */,
+/* 19 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

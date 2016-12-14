@@ -1,30 +1,69 @@
 import { h, Component } from 'preact';
 import { Link } from 'preact-router';
 import './Header.css';
+const links=[
+	{
+		link:'',
+		text: 'HOME'
+	},
+	{
+		link:'sponsors',
+		text: 'SPONSORS'
+	},
+	{
+		link:'partners',
+		text: 'PARTNERS'
+	},
+	{
+		link:'awards',
+		text: 'AWARDS'
+	},
+	{
+		link:'contactus',
+		text: 'CONTACT US'
+	},
+];
 export default class Header extends Component{
+	constructor() {
+		super();
+		this.state = {
+			sidebarOpened: false
+		};
+	}
+
+	toggleSideBar(){
+		this.setState({
+			sidebarOpened: !this.state.sidebarOpened
+		});
+	}
+
+	closeSideBar(){
+		this.setState({
+			sidebarOpened: false
+		});
+	}
+
 	render(){
 		return (
 			<header>
-				<nav className='desktop'>
+				<nav className={'sidebar ' + (this.state.sidebarOpened?'opened':'')}>
 					<div className="logo link">
 						LOGO
 					</div>
-					<Link href='/' className="link boldFont">
-						HOME
-					</Link>
-					<Link href='/sponsors/' className="link boldFont">
-						SPONSORS
-					</Link>
-					<Link href='/partners/' className="link boldFont">
-						PARTNERS
-					</Link>
-					<Link href='/awards/' className="link boldFont">
-						AWARDS
-					</Link>
-					<Link href='/contactus/' className="link boldFont">
-						CONTACT US
-					</Link>
+					{links.map(item=>{
+						return(
+							<Link href={"/"+item.link} className="link boldFont" onClick={this.closeSideBar.bind(this)}>
+								{item.text}
+							</Link>
+						);
+					})}
 				</nav>
+				<i className='sidebar-switch' onClick={this.toggleSideBar.bind(this)}>
+					<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+							<path d="M0 0h24v24H0z" fill="none"/>
+							<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+					</svg>
+				</i>
 			</header>
 
 		);

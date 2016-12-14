@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-	.page-home{
+	.page.page-home{
 		.cover{
 			width: 100%;
 			height: auto;
