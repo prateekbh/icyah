@@ -490,6 +490,7 @@ webpackJsonp([0],[
 		}, {
 			key: 'closeSideBar',
 			value: function closeSideBar() {
+				console.log('hi');
 				this.setState({
 					sidebarOpened: false
 				});
@@ -512,9 +513,13 @@ webpackJsonp([0],[
 						),
 						links.map(function (item) {
 							return (0, _preact.h)(
-								_preactRouter.Link,
-								{ href: "/" + item.link, className: 'link boldFont', onClick: _this2.closeSideBar.bind(_this2) },
-								item.text
+								'div',
+								{ onClick: _this2.closeSideBar.bind(_this2) },
+								(0, _preact.h)(
+									_preactRouter.Link,
+									{ href: "/" + item.link, className: 'link boldFont' },
+									item.text
+								)
 							);
 						})
 					),
@@ -584,11 +589,20 @@ webpackJsonp([0],[
 				return (0, _preact.h)(
 					'div',
 					{ className: 'page page-home' },
-					(0, _preact.h)('img', { 'class': 'cover', src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICYAH&w=1024&h=350' }),
+					(0, _preact.h)('div', { 'class': 'mobCover' }),
 					(0, _preact.h)(
 						'div',
 						{ className: 'content-home' },
-						'HOME'
+						(0, _preact.h)(
+							'h2',
+							{ className: 'head typl8-gamma' },
+							'Indian Association for Adolescent Health'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
+						)
 					)
 				);
 			}

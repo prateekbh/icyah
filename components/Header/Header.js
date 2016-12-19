@@ -38,6 +38,7 @@ export default class Header extends Component{
 	}
 
 	closeSideBar(){
+		console.log('hi');
 		this.setState({
 			sidebarOpened: false
 		});
@@ -52,9 +53,11 @@ export default class Header extends Component{
 					</div>
 					{links.map(item=>{
 						return(
-							<Link href={"/"+item.link} className="link boldFont" onClick={this.closeSideBar.bind(this)}>
-								{item.text}
-							</Link>
+							<div onClick={this.closeSideBar.bind(this)}>
+								<Link href={"/"+item.link} className="link boldFont">
+									{item.text}
+								</Link>
+							</div>
 						);
 					})}
 				</nav>

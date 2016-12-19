@@ -1,16 +1,19 @@
 .page.page-home{
 	margin-top: -80px;
-	.cover{
-		width: 1024px;
-		height: 350px;
+	.mobCover{
+		margin-bottom:15px;
+		height: 300px;
+		width: 100%;
+		background-position: center;
+		background-size: cover;
+		background-image: url('https://placeholdit.imgix.net/~text?txtsize=33&txt=ICYAH&w=1024&h=350');
 	}
 }
 
 @media screen and (max-width: 1024px) {
 	.page.page-home{
 		.cover{
-			width: 100%;
-			height: auto;
+			display: none;
 		}
 	}
 }
