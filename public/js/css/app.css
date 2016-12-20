@@ -89,6 +89,14 @@ header .sidebar-switch{
 	.page.page-home .cover{
 		display: none;
 	}
+}.page-fees .typl8-delta{
+    margin: 20px auto;
+}
+.page-fees table{
+    width: 100%;
+}
+.page-fees td{
+    padding: 8px;
 }@charset "UTF-8";
 /*!
 Typeplate : Starter Kit

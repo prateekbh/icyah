@@ -1,0 +1,11 @@
+.page-fees{
+	.typl8-delta{
+		margin: 20px auto;
+	}
+	table{
+		width: 100%;
+	}
+	td{
+		padding: 8px;
+	}
+}

@@ -11,6 +11,10 @@ const links=[
 		text: 'AWARDS'
 	},
 	{
+		link:'fees',
+		text: 'FEES'
+	},
+	{
 		link:'aboutus',
 		text: 'ABOUT US'
 	},

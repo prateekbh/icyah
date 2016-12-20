@@ -10,10 +10,10 @@ app.use(serveStatic(rootDir));
 
 app.get("/awards",serveSite);
 app.get("/aboutus",serveSite);
+app.get("/fees",serveSite);
 
 
 function serveSite(req,res){
-	console.log(path.join(__dirname,'index.html'));
 	res.sendFile(path.join(__dirname,'index.html'));
 }
 app.listen(process.env.PORT||8080, ()=>{

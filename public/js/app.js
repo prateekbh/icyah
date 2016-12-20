@@ -55,6 +55,10 @@ webpackJsonp([0],[
 
 	var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
+	var _Fees = __webpack_require__(23);
+
+	var _Fees2 = _interopRequireDefault(_Fees);
+
 	__webpack_require__(15);
 
 	__webpack_require__(17);
@@ -92,7 +96,8 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_Home2.default, { path: '/' }),
 	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors' }),
 	            (0, _preact.h)(_Awards2.default, { path: '/awards' }),
-	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' })
+	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' }),
+	            (0, _preact.h)(_Fees2.default, { path: '/fees' })
 	          )
 	        )
 	      );
@@ -466,6 +471,9 @@ webpackJsonp([0],[
 		link: 'awards',
 		text: 'AWARDS'
 	}, {
+		link: 'fees',
+		text: 'FEES'
+	}, {
 		link: 'aboutus',
 		text: 'ABOUT US'
 	}];
@@ -754,16 +762,16 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = function (_Component) {
-		_inherits(Home, _Component);
+	var AboutUs = function (_Component) {
+		_inherits(AboutUs, _Component);
 
-		function Home() {
-			_classCallCheck(this, Home);
+		function AboutUs() {
+			_classCallCheck(this, AboutUs);
 
-			return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
 		}
 
-		_createClass(Home, [{
+		_createClass(AboutUs, [{
 			key: 'render',
 			value: function render() {
 				return (0, _preact.h)(
@@ -870,10 +878,10 @@ webpackJsonp([0],[
 			}
 		}]);
 
-		return Home;
+		return AboutUs;
 	}(_preact.Component);
 
-	exports.default = Home;
+	exports.default = AboutUs;
 
 /***/ },
 /* 22 */
@@ -895,16 +903,16 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = function (_Component) {
-		_inherits(Home, _Component);
+	var Awards = function (_Component) {
+		_inherits(Awards, _Component);
 
-		function Home() {
-			_classCallCheck(this, Home);
+		function Awards() {
+			_classCallCheck(this, Awards);
 
-			return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (Awards.__proto__ || Object.getPrototypeOf(Awards)).apply(this, arguments));
 		}
 
-		_createClass(Home, [{
+		_createClass(Awards, [{
 			key: 'render',
 			value: function render() {
 				return (0, _preact.h)(
@@ -1030,10 +1038,389 @@ webpackJsonp([0],[
 			}
 		}]);
 
-		return Home;
+		return Awards;
 	}(_preact.Component);
 
-	exports.default = Home;
+	exports.default = Awards;
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	__webpack_require__(24);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Fees = function (_Component) {
+		_inherits(Fees, _Component);
+
+		function Fees() {
+			_classCallCheck(this, Fees);
+
+			return _possibleConstructorReturn(this, (Fees.__proto__ || Object.getPrototypeOf(Fees)).apply(this, arguments));
+		}
+
+		_createClass(Fees, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-fees' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-fees' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-delta' },
+							'Sponsorship for Conference, Sessions and Associated Events'
+						),
+						(0, _preact.h)(
+							'table',
+							{ border: '1' },
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Platinum Sponsor'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 5 lakhs'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Gold Sponsor'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 3 lakhs'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Silver Sponsors'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 2 lakhs'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Workshop Sponsorship'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 2 lakhs'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Scientific Session Sponsorship'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 1 lakhs'
+								)
+							)
+						),
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-delta' },
+							'Exhibition Stalls:'
+						),
+						(0, _preact.h)(
+							'table',
+							{ border: '1' },
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'3 days'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 60,000/-'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'2 days'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 45,000/-'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'1 day'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 25,000/-'
+								)
+							)
+						),
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-delta' },
+							'Advertisement in Souvenir:'
+						),
+						(0, _preact.h)(
+							'table',
+							{ border: '1' },
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Back cover - Coloured'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 30,000/-'
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Front Inner Cover - Coloured'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 25,000/-'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Back Inner Cover - Coloured'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 25,000/-'
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Full Page - Coloured'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 20,000/-'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Half Page - Coloured'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 15,000/-'
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Full Page- B & W'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 15,000/-'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Half Page- B & W'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 8,000/-'
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Bookmark'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 20,000/-'
+								)
+							),
+							(0, _preact.h)(
+								'tr',
+								null,
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)(
+										'strong',
+										null,
+										'Delegate Bags'
+									)
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									'Rs. 20,000/-'
+								),
+								(0, _preact.h)(
+									'td',
+									null,
+									(0, _preact.h)('strong', null)
+								),
+								(0, _preact.h)('td', null)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Fees;
+	}(_preact.Component);
+
+	exports.default = Fees;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);

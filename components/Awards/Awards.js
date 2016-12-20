@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
 
-export default class Home extends Component {
+export default class Awards extends Component {
  render(){
 	 return (
 		 <div className='page page-aboutus'>
