@@ -47,6 +47,14 @@ webpackJsonp([0],[
 
 	var _Sponsors2 = _interopRequireDefault(_Sponsors);
 
+	var _Awards = __webpack_require__(22);
+
+	var _Awards2 = _interopRequireDefault(_Awards);
+
+	var _AboutUs = __webpack_require__(21);
+
+	var _AboutUs2 = _interopRequireDefault(_AboutUs);
+
 	__webpack_require__(15);
 
 	__webpack_require__(17);
@@ -82,7 +90,9 @@ webpackJsonp([0],[
 	            _preactRouter2.default,
 	            null,
 	            (0, _preact.h)(_Home2.default, { path: '/' }),
-	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors' })
+	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors' }),
+	            (0, _preact.h)(_Awards2.default, { path: '/awards' }),
+	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' })
 	          )
 	        )
 	      );
@@ -453,17 +463,11 @@ webpackJsonp([0],[
 		link: '',
 		text: 'HOME'
 	}, {
-		link: 'sponsors',
-		text: 'SPONSORS'
-	}, {
-		link: 'partners',
-		text: 'PARTNERS'
-	}, {
 		link: 'awards',
 		text: 'AWARDS'
 	}, {
-		link: 'contactus',
-		text: 'CONTACT US'
+		link: 'aboutus',
+		text: 'ABOUT US'
 	}];
 
 	var Header = function (_Component) {
@@ -513,13 +517,9 @@ webpackJsonp([0],[
 						),
 						links.map(function (item) {
 							return (0, _preact.h)(
-								'div',
-								{ onClick: _this2.closeSideBar.bind(_this2) },
-								(0, _preact.h)(
-									_preactRouter.Link,
-									{ href: "/" + item.link, className: 'link boldFont' },
-									item.text
-								)
+								_preactRouter.Link,
+								{ href: "/" + item.link, onClick: _this2.closeSideBar.bind(_this2), className: 'link boldFont' },
+								item.text
 							);
 						})
 					),
@@ -594,14 +594,53 @@ webpackJsonp([0],[
 						'div',
 						{ className: 'content-home' },
 						(0, _preact.h)(
+							'h1',
+							{ className: 'typl8-gamma' },
+							'International Conference on Youth and Adolescent Health 2017'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'div',
+								null,
+								(0, _preact.h)(
+									'strong',
+									null,
+									'Theme: '
+								),
+								' Young Generation: Our Global Edge'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								(0, _preact.h)(
+									'strong',
+									null,
+									'Date: '
+								),
+								' 9th -11th Mar, 2017'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								(0, _preact.h)(
+									'strong',
+									null,
+									'Venue: '
+								),
+								' Convention Centre, New Delhi Municipal Council, Parliament Street, New Delhi, India '
+							)
+						),
+						(0, _preact.h)(
 							'h2',
-							{ className: 'head typl8-gamma' },
+							{ className: 'head typl8-delta' },
 							'Indian Association for Adolescent Health'
 						),
 						(0, _preact.h)(
 							'p',
 							null,
-							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
+							'in collaboration with New Delhi Municipal Council National University of Educational Planning & Administration, Indian Association of Public Health-Delhi State Branch (IPHA-DSB), Indian Association of Preventive & Social Medicine-Delhi (IAPSM-DSB), National Institute of Health & Family Welfare (NIHFW), Vardhaman Mahavir Medical College (VMMC) & Safdarjung Hospital, Delhi, All India Institute of Medical Sciences (AIIMS), Hamdard Institute of Medical Sciences & Research (HIMSR)'
 						)
 					)
 				);
@@ -693,6 +732,308 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 20 */,
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_Component) {
+		_inherits(Home, _Component);
+
+		function Home() {
+			_classCallCheck(this, Home);
+
+			return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+		}
+
+		_createClass(Home, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-aboutus' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-aboutus' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-gamma' },
+							'Indian Association for Adolescent Health'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
+						),
+						(0, _preact.h)(
+							'h2',
+							{ className: 'head typl8-delta' },
+							'International Conference on Youth & Adolescent Health 2017'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'div',
+								null,
+								'The conference will be an apt platform for scholars, experts and all stakeholders of youth and adolescent health to discuss their role in achievement of sustainable development goals.'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'The conference will cover following topics:',
+								(0, _preact.h)(
+									'ul',
+									null,
+									(0, _preact.h)(
+										'li',
+										null,
+										'Any professional concerned with Adolescent, Youth and Development.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Members of IAAH-National & State Chapter.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Faculty Members, Scientists and Postgraduate Students from the Medical Colleges.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Faculty Members, Scientists and Postgraduate Students from the School of Social Sciences and Psychology.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Research Scientists from Health and Training Institutions at National or State Levels.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Health Planners, Administrators and Policy Makers.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'School Teachers, Principals, Counselors.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Programme Managers of National Health Mission at all levels (particularly those associated with National Adolescent Health Program Rashtriya Kishor Swasthya Karyakram).'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Faculty Members from National, State and Regional Level Health & Family Welfare Training Centres.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Programme Managers from Voluntary and Non-governmental Organizations working in the fields of Adolescent Health & Development.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Programme Managers from International Organizations working in the fields of Adolescent Health.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Adolescents.'
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Home;
+	}(_preact.Component);
+
+	exports.default = Home;
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_Component) {
+		_inherits(Home, _Component);
+
+		function Home() {
+			_classCallCheck(this, Home);
+
+			return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+		}
+
+		_createClass(Home, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-aboutus' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-aboutus' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-gamma' },
+							'Awards and Fellowships'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'ul',
+								null,
+								(0, _preact.h)(
+									'li',
+									null,
+									'Dr. Prema Bali Oration'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Dr. Surrinder  H Singh Oration'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Sohan Lal Golyan Gold medal'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Best Scientific Paper Presentation Award'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Best Essay and Poster Competition to School Students'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Fellows of IAAH.'
+								)
+							)
+						),
+						(0, _preact.h)(
+							'h2',
+							{ className: 'head typl8-delta' },
+							'Who should participate?'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'li',
+								null,
+								'Any professional concerned with Adolescent, Youth and Development.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Members of IAAH-National & State Chapter.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Faculty Members, Scientists and Postgraduate Students from the Medical Colleges.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Faculty Members, Scientists and Postgraduate Students from the School of Social Sciences and Psychology.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Research Scientists from Health and Training Institutions at National or State Levels.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Health Planners, Administrators and Policy Makers.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'School Teachers, Principals, Counselors.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Programme Managers of National Health Mission at all levels (particularly those associated with National Adolescent Health Program Rashtriya Kishor Swasthya Karyakram).'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Faculty Members from National, State and Regional Level Health & Family Welfare Training Centres.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Programme Managers from Voluntary and Non-governmental Organizations working in the fields of Adolescent Health & Development.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Programme Managers from International Organizations working in the fields of Adolescent Health.'
+							),
+							(0, _preact.h)(
+								'li',
+								null,
+								'Adolescents.'
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Home;
+	}(_preact.Component);
+
+	exports.default = Home;
 
 /***/ }
 ]);

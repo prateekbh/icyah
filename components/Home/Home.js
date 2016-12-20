@@ -7,11 +7,24 @@ export default class Home extends Component {
 		 <div className='page page-home'>
 			<div class='mobCover'></div>
 			<div className='content-home'>
-				<h2 className='head typl8-gamma'>
+				<h1 className="typl8-gamma">International Conference on Youth and Adolescent Health 2017</h1>
+				<p>
+					<div><strong>Theme: </strong> Young Generation: Our Global Edge</div>
+					<div><strong>Date: </strong> 9th -11th Mar, 2017</div>
+					<div><strong>Venue: </strong> Convention Centre, New Delhi Municipal Council, Parliament Street, New Delhi, India </div>
+				</p>
+				<h2 className='head typl8-delta'>
 					Indian Association for Adolescent Health
 				</h2>
 				<p>
-					It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.
+					in collaboration with New Delhi Municipal Council
+					National University of Educational Planning & Administration,
+					Indian Association of Public Health-Delhi State Branch (IPHA-DSB),
+					Indian Association of Preventive & Social Medicine-Delhi (IAPSM-DSB),
+					National Institute of Health & Family Welfare (NIHFW),
+					Vardhaman Mahavir Medical College (VMMC) & Safdarjung Hospital, Delhi,
+					All India Institute of Medical Sciences (AIIMS),
+					Hamdard Institute of Medical Sciences & Research (HIMSR)
 				</p>
 			</div>
 		 </div>

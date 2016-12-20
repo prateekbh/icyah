@@ -1,6 +1,10 @@
 .page{
 	max-width: 1024px;
-	margin: auto;
+	margin: 20px auto;
+}
+
+.inline-block{
+	display: inline-block;
 }
 
 @media screen and (max-width: 1024px) {

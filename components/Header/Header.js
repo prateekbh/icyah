@@ -7,20 +7,12 @@ const links=[
 		text: 'HOME'
 	},
 	{
-		link:'sponsors',
-		text: 'SPONSORS'
-	},
-	{
-		link:'partners',
-		text: 'PARTNERS'
-	},
-	{
 		link:'awards',
 		text: 'AWARDS'
 	},
 	{
-		link:'contactus',
-		text: 'CONTACT US'
+		link:'aboutus',
+		text: 'ABOUT US'
 	},
 ];
 export default class Header extends Component{
@@ -53,11 +45,9 @@ export default class Header extends Component{
 					</div>
 					{links.map(item=>{
 						return(
-							<div onClick={this.closeSideBar.bind(this)}>
-								<Link href={"/"+item.link} className="link boldFont">
-									{item.text}
-								</Link>
-							</div>
+							<Link href={"/"+item.link} onClick={this.closeSideBar.bind(this)} className="link boldFont">
+								{item.text}
+							</Link>
 						);
 					})}
 				</nav>
