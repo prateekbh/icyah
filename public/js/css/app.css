@@ -25,7 +25,8 @@ header .link {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	color: #fff
+	color: #fff;
+	text-transform: uppercase
 }
 
 header .link:hover{
@@ -97,6 +98,26 @@ header .sidebar-switch{
 }
 .page-fees td{
     padding: 8px;
+}.page-abstract label{
+    display: inline-block;
+    width: 100px;
+}
+.page-abstract input.typl8-zeta{
+    width: 250px;
+    border : 0px solid #00aaee;
+    border-bottom-width: 1px;
+    outline: 0px;
+}
+.page-abstract .submit{
+    border:0px;
+    color: #fff;
+    padding: 8px 16px;
+    min-width: 150px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin: 8px auto;
+    background-color: #009688;
+    outline: 0px;
 }@charset "UTF-8";
 /*!
 Typeplate : Starter Kit

@@ -6,6 +6,7 @@ import Sponsors from './components/Sponsors/Sponsors';
 import Awards from './components/Awards/Awards';
 import AboutUs from './components/AboutUs/AboutUs';
 import Fees from './components/Fees/Fees';
+import Abstract from './components/Abstract/Abstract';
 import './type.css';
 import './App.css';
 export default class App extends Component {
@@ -20,6 +21,7 @@ export default class App extends Component {
             <Awards path="/awards"/>
             <AboutUs path="/aboutus"/>
             <Fees path="/fees"/>
+            <Abstract path="/abstract" />
           </Router>
         </div>
       </div>
