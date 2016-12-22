@@ -21,10 +21,16 @@
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "nodemailer": "^2.7.0",
+    "nodemailer-mailgun-transport": "^1.2.2",
     "preact": "^7.1.0",
-    "preact-compat": "^3.9.4"
+    "preact-compat": "^3.9.4",
+    "serve-static": "^1.11.1"
   },
   "scripts": {
+    "prestart": "npm i",
+    "postinstall": "npm run build",
+    "startdev": "node server.js",
     "start": "node server.js",
     "build": "webpack webpack.config.js",
     "eject": "preact-scripts eject",
