@@ -2,7 +2,7 @@
   "name": "icyah",
   "version": "0.0.1",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.9",
@@ -14,9 +14,7 @@
     "preact-router": "^2.0.0",
     "precss": "^1.4.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0"
-  },
-  "dependencies": {
+    "webpack": "^1.14.0",
     "babel-preset-react": "^6.16.0",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
