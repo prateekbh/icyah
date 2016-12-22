@@ -18,6 +18,10 @@ const links=[
 		link:'aboutus',
 		text: 'ABOUT US'
 	},
+	{
+		link: 'abstract',
+		text: 'Abstract Submission'
+	}
 ];
 export default class Header extends Component{
 	constructor() {

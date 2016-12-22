@@ -10,7 +10,7 @@ webpackJsonp([0],[
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(19);
+	__webpack_require__(27);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47,21 +47,25 @@ webpackJsonp([0],[
 
 	var _Sponsors2 = _interopRequireDefault(_Sponsors);
 
-	var _Awards = __webpack_require__(22);
+	var _Awards = __webpack_require__(15);
 
 	var _Awards2 = _interopRequireDefault(_Awards);
 
-	var _AboutUs = __webpack_require__(21);
+	var _AboutUs = __webpack_require__(16);
 
 	var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
-	var _Fees = __webpack_require__(23);
+	var _Fees = __webpack_require__(17);
 
 	var _Fees2 = _interopRequireDefault(_Fees);
 
-	__webpack_require__(15);
+	var _Abstract = __webpack_require__(20);
 
-	__webpack_require__(17);
+	var _Abstract2 = _interopRequireDefault(_Abstract);
+
+	__webpack_require__(23);
+
+	__webpack_require__(25);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -97,7 +101,8 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors' }),
 	            (0, _preact.h)(_Awards2.default, { path: '/awards' }),
 	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' }),
-	            (0, _preact.h)(_Fees2.default, { path: '/fees' })
+	            (0, _preact.h)(_Fees2.default, { path: '/fees' }),
+	            (0, _preact.h)(_Abstract2.default, { path: '/abstract' })
 	          )
 	        )
 	      );
@@ -476,6 +481,9 @@ webpackJsonp([0],[
 	}, {
 		link: 'aboutus',
 		text: 'ABOUT US'
+	}, {
+		link: 'abstract',
+		text: 'Abstract Submission'
 	}];
 
 	var Header = function (_Component) {
@@ -723,168 +731,6 @@ webpackJsonp([0],[
 /***/ },
 /* 14 */,
 /* 15 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 16 */,
-/* 17 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 18 */,
-/* 19 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 20 */,
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _preact = __webpack_require__(1);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var AboutUs = function (_Component) {
-		_inherits(AboutUs, _Component);
-
-		function AboutUs() {
-			_classCallCheck(this, AboutUs);
-
-			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
-		}
-
-		_createClass(AboutUs, [{
-			key: 'render',
-			value: function render() {
-				return (0, _preact.h)(
-					'div',
-					{ className: 'page page-aboutus' },
-					(0, _preact.h)(
-						'div',
-						{ className: 'content-aboutus' },
-						(0, _preact.h)(
-							'h2',
-							{ className: 'typl8-gamma' },
-							'Indian Association for Adolescent Health'
-						),
-						(0, _preact.h)(
-							'p',
-							null,
-							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
-						),
-						(0, _preact.h)(
-							'h2',
-							{ className: 'head typl8-delta' },
-							'International Conference on Youth & Adolescent Health 2017'
-						),
-						(0, _preact.h)(
-							'p',
-							null,
-							(0, _preact.h)(
-								'div',
-								null,
-								'The conference will be an apt platform for scholars, experts and all stakeholders of youth and adolescent health to discuss their role in achievement of sustainable development goals.'
-							),
-							(0, _preact.h)(
-								'div',
-								null,
-								'The conference will cover following topics:',
-								(0, _preact.h)(
-									'ul',
-									null,
-									(0, _preact.h)(
-										'li',
-										null,
-										'Any professional concerned with Adolescent, Youth and Development.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Members of IAAH-National & State Chapter.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Faculty Members, Scientists and Postgraduate Students from the Medical Colleges.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Faculty Members, Scientists and Postgraduate Students from the School of Social Sciences and Psychology.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Research Scientists from Health and Training Institutions at National or State Levels.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Health Planners, Administrators and Policy Makers.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'School Teachers, Principals, Counselors.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Programme Managers of National Health Mission at all levels (particularly those associated with National Adolescent Health Program Rashtriya Kishor Swasthya Karyakram).'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Faculty Members from National, State and Regional Level Health & Family Welfare Training Centres.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Programme Managers from Voluntary and Non-governmental Organizations working in the fields of Adolescent Health & Development.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Programme Managers from International Organizations working in the fields of Adolescent Health.'
-									),
-									(0, _preact.h)(
-										'li',
-										null,
-										'Adolescents.'
-									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return AboutUs;
-	}(_preact.Component);
-
-	exports.default = AboutUs;
-
-/***/ },
-/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1044,7 +890,7 @@ webpackJsonp([0],[
 	exports.default = Awards;
 
 /***/ },
-/* 23 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1057,7 +903,148 @@ webpackJsonp([0],[
 
 	var _preact = __webpack_require__(1);
 
-	__webpack_require__(24);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AboutUs = function (_Component) {
+		_inherits(AboutUs, _Component);
+
+		function AboutUs() {
+			_classCallCheck(this, AboutUs);
+
+			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
+		}
+
+		_createClass(AboutUs, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-aboutus' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-aboutus' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-gamma' },
+							'Indian Association for Adolescent Health'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
+						),
+						(0, _preact.h)(
+							'h2',
+							{ className: 'head typl8-delta' },
+							'International Conference on Youth & Adolescent Health 2017'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'div',
+								null,
+								'The conference will be an apt platform for scholars, experts and all stakeholders of youth and adolescent health to discuss their role in achievement of sustainable development goals.'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'The conference will cover following topics:',
+								(0, _preact.h)(
+									'ul',
+									null,
+									(0, _preact.h)(
+										'li',
+										null,
+										'Any professional concerned with Adolescent, Youth and Development.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Members of IAAH-National & State Chapter.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Faculty Members, Scientists and Postgraduate Students from the Medical Colleges.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Faculty Members, Scientists and Postgraduate Students from the School of Social Sciences and Psychology.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Research Scientists from Health and Training Institutions at National or State Levels.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Health Planners, Administrators and Policy Makers.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'School Teachers, Principals, Counselors.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Programme Managers of National Health Mission at all levels (particularly those associated with National Adolescent Health Program Rashtriya Kishor Swasthya Karyakram).'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Faculty Members from National, State and Regional Level Health & Family Welfare Training Centres.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Programme Managers from Voluntary and Non-governmental Organizations working in the fields of Adolescent Health & Development.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Programme Managers from International Organizations working in the fields of Adolescent Health.'
+									),
+									(0, _preact.h)(
+										'li',
+										null,
+										'Adolescents.'
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return AboutUs;
+	}(_preact.Component);
+
+	exports.default = AboutUs;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	__webpack_require__(18);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1417,7 +1404,250 @@ webpackJsonp([0],[
 	exports.default = Fees;
 
 /***/ },
-/* 24 */
+/* 18 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 19 */,
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	__webpack_require__(21);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Abstract = function (_Component) {
+		_inherits(Abstract, _Component);
+
+		function Abstract() {
+			_classCallCheck(this, Abstract);
+
+			var _this = _possibleConstructorReturn(this, (Abstract.__proto__ || Object.getPrototypeOf(Abstract)).call(this));
+
+			_this.state = {
+				abstractSubmitted: false,
+				isFormSubmitting: false
+			};
+			return _this;
+		}
+
+		_createClass(Abstract, [{
+			key: 'submitForm',
+			value: function submitForm() {
+				var that = this;
+				this.setState({
+					abstractSubmitted: false,
+					isFormSubmitting: true
+				});
+				var aname = this.frm.name.value;
+				var aemail = this.frm.email.value;
+				var fr = new FileReader();
+				fr.addEventListener('loadend', function (e) {
+					var _this2 = this;
+
+					var myHeaders = new Headers();
+					myHeaders.append("Content-Type", "application/json");
+					fetch('/submitabstract', {
+						method: 'POST',
+						headers: myHeaders,
+						body: JSON.stringify({
+							name: aname,
+							email: aemail,
+							file: e.target.result
+						})
+					}).then(function (res) {
+						if (res.ok) {
+							that.setState({
+								abstractSubmitted: true,
+								isFormSubmitting: false
+							});
+							console.log('abstract submitted');
+						} else {
+							throw new Error('not good ajax');
+						}
+					}).catch(function (e) {
+						_this2.setState({
+							abstractSubmitted: false,
+							isFormSubmitting: false
+						});
+					});
+				});
+				fr.addEventListener('error', function (e) {
+					alert('File could not be read');
+				});
+				fr.readAsDataURL(this.frm.abstractfile.files[0]);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this3 = this;
+
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-abstract' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-abstract' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-delta' },
+							'Guidelines for Abstract Submission'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'div',
+								null,
+								(0, _preact.h)(
+									'b',
+									null,
+									'Authors List:'
+								),
+								' List the name of authors and address of institutions with e mail-ID. Please underline presenting author\u2019s name.'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								(0, _preact.h)(
+									'b',
+									null,
+									'Abstract Title:'
+								),
+								' Please type abstract title in UPPERCASE and do not put a full stop (.) after the title.'
+							),
+							(0, _preact.h)(
+								'ol',
+								null,
+								(0, _preact.h)(
+									'li',
+									null,
+									'Abstracts must be typed and submitted in English in Word Format, font type \u201CTimes New Roman\u201D, font size 12 and should be submitted online only'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Abstract should include i) Introduction, ii) Objectives, iii) Materials and Methods, v) Results and vi) Conclusion.'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'The abstract must not exceed 250 words'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'The Abstract should be submitted online only'
+								),
+								(0, _preact.h)(
+									'li',
+									null,
+									'Duration for Oral presentation will be restricted to 10 minutes (8 minutes for presentation and 2 minutes for discussion).'
+								)
+							)
+						),
+						this.state.abstractSubmitted ? (0, _preact.h)(
+							'div',
+							null,
+							(0, _preact.h)(
+								'h2',
+								null,
+								'Form submitted'
+							)
+						) : (0, _preact.h)(
+							'div',
+							null,
+							(0, _preact.h)(
+								'h2',
+								{ className: 'typl8-delta' },
+								'Submit Abstract'
+							),
+							(0, _preact.h)(
+								'form',
+								{ action: 'javascript:', method: 'POST', ref: function ref(frm) {
+										_this3.frm = frm;
+									}, onSubmit: this.submitForm.bind(this) },
+								(0, _preact.h)(
+									'div',
+									null,
+									(0, _preact.h)(
+										'label',
+										null,
+										'Name'
+									),
+									(0, _preact.h)('input', { 'class': 'typl8-zeta', type: 'text', name: 'name', required: true })
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									(0, _preact.h)(
+										'label',
+										null,
+										'EMail Id'
+									),
+									(0, _preact.h)('input', { 'class': 'typl8-zeta', type: 'email', name: 'email', required: true })
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									(0, _preact.h)('input', { type: 'file', name: 'abstractfile', required: true, accept: '.pdf' })
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									(0, _preact.h)('input', { type: 'submit', 'class': 'submit', value: this.state.isFormSubmitting ? 'Sending' : 'Send' })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Abstract;
+	}(_preact.Component);
+
+	exports.default = Abstract;
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 22 */,
+/* 23 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 24 */,
+/* 25 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 26 */,
+/* 27 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
