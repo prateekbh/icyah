@@ -33,6 +33,13 @@ app.get("/fees",serveSite);
 app.get("/abstract",serveSite);
 
 app.post('/submitabstract',function(req,res){
+	console.log("=====================================================");
+	console.log(
+			process.env.mail_from,
+			process.env.mail_receiver,
+			auth
+		);
+	console.log("=====================================================");
 	let data = req.body.file;
 	data = data.replace('data:application/pdf;base64,','');
 	const fileName = path.join(process.cwd(),"abstracts","abstractby_"+req.body.name+"_at_"+new Date().toISOString()+".pdf")
