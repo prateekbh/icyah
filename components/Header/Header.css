@@ -3,11 +3,13 @@ header{
 	height: 80px;
 	position: relative;
 	z-index: 1;
-	nav {
+
+	nav.sidebar{
 		margin: auto;
 		text-align: left;
 		max-width: 1024px;
 	}
+
 	.link {
 		display: inline-block;
 		height: 80px;
@@ -19,6 +21,44 @@ header{
 		color: #fff;
 		&:hover{
 			background-color:rgba(255,255,255,0.5);
+		}
+	}
+	.sidebar-switch{
+		position: absolute;
+		top:10px;
+		left:10px;
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	header{
+		background-color:transparent;
+		nav.sidebar{
+			background-color:#333;
+			position: fixed;
+			left: 0;
+			top: 0;
+			height:100%;
+			width: 80%;
+    	max-width: 350px;
+			will-change: transform;
+			transform: translate3d(-100%,0,0);
+			transition-duration: 300ms;
+			transition-propert: transform;
+			z-index:2;
+			&.opened{
+				transform: translate3d(0,0,0);
+			}
+		}
+		.sidebar-switch{
+			cursor: pointer;
+		}
+		.sidebar-switch{
+			display: inline-block;
+		}
+		.link{
+			display: block;
 		}
 	}
 }
