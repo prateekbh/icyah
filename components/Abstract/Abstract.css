@@ -20,4 +20,11 @@
 		background-color: #009688;
 		outline: 0px;
 	}
+	.icon-success{
+		vertical-align: middle;
+		margin-right: 15px;
+	}
+	.text{
+		display: inline-block;
+	}
 }
