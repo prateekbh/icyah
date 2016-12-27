@@ -2,7 +2,7 @@
   "name": "icyah",
   "version": "0.0.1",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.9",
@@ -14,17 +14,21 @@
     "preact-router": "^2.0.0",
     "precss": "^1.4.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0"
-  },
-  "dependencies": {
+    "webpack": "^1.14.0",
     "babel-preset-react": "^6.16.0",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "nodemailer": "^2.7.0",
+    "nodemailer-mailgun-transport": "^1.2.2",
     "preact": "^7.1.0",
-    "preact-compat": "^3.9.4"
+    "preact-compat": "^3.9.4",
+    "serve-static": "^1.11.1"
   },
   "scripts": {
+    "prestart": "npm i",
+    "postinstall": "npm run build",
+    "startdev": "node server.js",
     "start": "node server.js",
     "build": "webpack webpack.config.js",
     "eject": "preact-scripts eject",
