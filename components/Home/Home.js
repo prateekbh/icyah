@@ -7,24 +7,49 @@ export default class Home extends Component {
 		 <div className='page page-home'>
 			<div class='mobCover'></div>
 			<div className='content-home'>
-				<h1 className="typl8-gamma">International Conference on Youth and Adolescent Health 2017</h1>
 				<p>
-					<div><strong>Theme: </strong> Young Generation: Our Global Edge</div>
-					<div><strong>Date: </strong> 9th -11th Mar, 2017</div>
-					<div><strong>Venue: </strong> Convention Centre, New Delhi Municipal Council, Parliament Street, New Delhi, India </div>
-				</p>
-				<h2 className='head typl8-delta'>
-					Indian Association for Adolescent Health
-				</h2>
-				<p>
-					in collaboration with New Delhi Municipal Council
-					National University of Educational Planning & Administration,
-					Indian Association of Public Health-Delhi State Branch (IPHA-DSB),
-					Indian Association of Preventive & Social Medicine-Delhi (IAPSM-DSB),
-					National Institute of Health & Family Welfare (NIHFW),
-					Vardhaman Mahavir Medical College (VMMC) & Safdarjung Hospital, Delhi,
-					All India Institute of Medical Sciences (AIIMS),
-					Hamdard Institute of Medical Sciences & Research (HIMSR)
+					<div className="typl8-alpha head">Dear Friends and Colleagues,</div>
+
+					<div>It gives us immense pleasure to invite you to the International Conference on Youth &amp;
+
+					Adolescent Health 2017 being organized by Indian Association for Adolescent Health
+
+					(IAAH), which will be held from 9 th to 11 th March, 2016 at NDMC Convention Centre, New
+
+					Delhi, India.</div>
+
+					<div>The theme of the conference is “Young Generation: Our Global Edge”. Globally, 1.2 billion
+
+					adolescents stand at the cross roads of childhood and adulthood. India alone is home to
+
+					243 million adolescents. Investing in adolescents today can break entrenched cycles of
+
+					poverty and inequity (UNICEF, 2011). Thus, it serves an opportunity to transform the
+
+					society by nurturing them properly and tapping the potential of this generation. It is well
+
+					known fact that as adolescents flourish so do their communities. Adolescents in India
+
+					constitute nearly one quarter of the total population of the country thereby making India
+
+					one of the youngest countries in the world. This provides an opportune platform for India
+
+					to take advantage and nurture the adolescence for socio-economic growth of the country.
+
+					The 3 day academic and technical feast will offer ample prospects to discuss important
+
+					issues, sharing information and exchange ideas in the field of adolescence and youth. Your
+
+					active participation and contribution in various scientific sessions will make this event a
+
+					real success.</div>
+
+					<i>
+						<div className='from'>Looking forward to welcoming you in Delhi, India.</div>
+						<div>With warm regards</div>
+						<div>Dr. Prema Bali,</div>
+						<div>Founding President, IAAH​</div>
+					</i>
 				</p>
 			</div>
 		 </div>

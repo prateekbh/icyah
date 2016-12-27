@@ -529,7 +529,7 @@ webpackJsonp([0],[
 						(0, _preact.h)(
 							'div',
 							{ className: 'logo link' },
-							'LOGO'
+							(0, _preact.h)('img', { src: '/images/logo.png' })
 						),
 						links.map(function (item) {
 							return (0, _preact.h)(
@@ -610,53 +610,47 @@ webpackJsonp([0],[
 						'div',
 						{ className: 'content-home' },
 						(0, _preact.h)(
-							'h1',
-							{ className: 'typl8-gamma' },
-							'International Conference on Youth and Adolescent Health 2017'
-						),
-						(0, _preact.h)(
 							'p',
 							null,
 							(0, _preact.h)(
 								'div',
-								null,
-								(0, _preact.h)(
-									'strong',
-									null,
-									'Theme: '
-								),
-								' Young Generation: Our Global Edge'
+								{ className: 'typl8-alpha head' },
+								'Dear Friends and Colleagues,'
 							),
 							(0, _preact.h)(
 								'div',
 								null,
-								(0, _preact.h)(
-									'strong',
-									null,
-									'Date: '
-								),
-								' 9th -11th Mar, 2017'
+								'It gives us immense pleasure to invite you to the International Conference on Youth & Adolescent Health 2017 being organized by Indian Association for Adolescent Health (IAAH), which will be held from 9 th to 11 th March, 2016 at NDMC Convention Centre, New Delhi, India.'
 							),
 							(0, _preact.h)(
 								'div',
 								null,
+								'The theme of the conference is \u201CYoung Generation: Our Global Edge\u201D. Globally, 1.2 billion adolescents stand at the cross roads of childhood and adulthood. India alone is home to 243 million adolescents. Investing in adolescents today can break entrenched cycles of poverty and inequity (UNICEF, 2011). Thus, it serves an opportunity to transform the society by nurturing them properly and tapping the potential of this generation. It is well known fact that as adolescents flourish so do their communities. Adolescents in India constitute nearly one quarter of the total population of the country thereby making India one of the youngest countries in the world. This provides an opportune platform for India to take advantage and nurture the adolescence for socio-economic growth of the country. The 3 day academic and technical feast will offer ample prospects to discuss important issues, sharing information and exchange ideas in the field of adolescence and youth. Your active participation and contribution in various scientific sessions will make this event a real success.'
+							),
+							(0, _preact.h)(
+								'i',
+								null,
 								(0, _preact.h)(
-									'strong',
-									null,
-									'Venue: '
+									'div',
+									{ className: 'from' },
+									'Looking forward to welcoming you in Delhi, India.'
 								),
-								' Convention Centre, New Delhi Municipal Council, Parliament Street, New Delhi, India '
+								(0, _preact.h)(
+									'div',
+									null,
+									'With warm regards'
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									'Dr. Prema Bali,'
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									'Founding President, IAAH\u200B'
+								)
 							)
-						),
-						(0, _preact.h)(
-							'h2',
-							{ className: 'head typl8-delta' },
-							'Indian Association for Adolescent Health'
-						),
-						(0, _preact.h)(
-							'p',
-							null,
-							'in collaboration with New Delhi Municipal Council National University of Educational Planning & Administration, Indian Association of Public Health-Delhi State Branch (IPHA-DSB), Indian Association of Preventive & Social Medicine-Delhi (IAPSM-DSB), National Institute of Health & Family Welfare (NIHFW), Vardhaman Mahavir Medical College (VMMC) & Safdarjung Hospital, Delhi, All India Institute of Medical Sciences (AIIMS), Hamdard Institute of Medical Sciences & Research (HIMSR)'
 						)
 					)
 				);
