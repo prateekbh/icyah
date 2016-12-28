@@ -49,7 +49,7 @@ export default class Header extends Component{
 			<header>
 				<nav className={'sidebar ' + (this.state.sidebarOpened?'opened':'')}>
 					<div className="logo link">
-						<img src='/images/logo.png'/>
+						<img src='/images/logo.png' width="162"/>
 					</div>
 					{links.map(item=>{
 						return(
