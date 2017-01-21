@@ -1,15 +1,32 @@
 import {h, Component} from 'preact';
+import {Link} from 'preact-router';
 import './Home.css'
 
 export default class Home extends Component {
  render(){
 	 return (
 		 <div className='page page-home'>
-			<div class='mobCover'></div>
-			<div className='content-home'>
-				<p>
-					<div className="typl8-alpha head">Dear Friends and Colleagues,</div>
+			<div class='mobCover'>
 
+				<a href='/public/pdf/brochure.pdf' target='_blank' className='link link-brocure'>Brochure</a>
+			</div>
+			<div className='content-home'>
+				<div className='sidepanel'>
+					<div className='dates'>
+						<div className='title'> Important Dates </div>
+						<div className='date'>Registrations open soon.</div>
+						<div className='date'>Abstract submissions open.</div>
+					</div>
+					<div className='venue'>
+						<div className='name'> Venue: <div>Convention Hall, NDMC New Delhi</div></div>
+						<div>
+							<img className='pic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHOHCSBJjKJbpX_wj2_x4Lerjx_WiOiNvEg5lKILTKVBHTWDNU'/>
+						</div>
+					</div>
+				</div>
+				<div className='content'>
+					<div className="typl8-alpha head">Welcome to ICYAH 2017</div>
+					<div>Dear Friends and Colleagues,</div>
 					<div>It gives us immense pleasure to invite you to the International Conference on Youth &amp;
 
 					Adolescent Health 2017 being organized by Indian Association for Adolescent Health
@@ -47,10 +64,13 @@ export default class Home extends Component {
 					<i>
 						<div className='from'>Looking forward to welcoming you in Delhi, India.</div>
 						<div>With warm regards</div>
+						<div>
+							<img className='pic-president' src='/public/images/president.jpg' width='100'/>
+						</div>
 						<div>Dr. Prema Bali,</div>
 						<div>Founding President, IAAH​</div>
 					</i>
-				</p>
+				</div>
 			</div>
 		 </div>
 	 );

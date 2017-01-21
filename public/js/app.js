@@ -473,17 +473,26 @@ webpackJsonp([0],[
 		link: '',
 		text: 'HOME'
 	}, {
+		link: [{
+			link: 'about/iaah',
+			text: 'IAAH'
+		}, {
+			link: 'about/icyah',
+			text: 'ICYAH'
+		}],
+		text: 'ABOUT'
+	}, {
 		link: 'awards',
 		text: 'AWARDS'
 	}, {
 		link: 'fees',
 		text: 'FEES'
 	}, {
-		link: 'aboutus',
-		text: 'ABOUT US'
-	}, {
 		link: 'abstract',
-		text: 'Abstract Submission'
+		text: 'Abstract'
+	}, {
+		link: 'contactus',
+		text: 'Contact Us'
 	}];
 
 	var Header = function (_Component) {
@@ -524,20 +533,76 @@ webpackJsonp([0],[
 					'header',
 					null,
 					(0, _preact.h)(
-						'nav',
-						{ className: 'sidebar ' + (this.state.sidebarOpened ? 'opened' : '') },
+						'div',
+						{ className: 'logos' },
 						(0, _preact.h)(
 							'div',
-							{ className: 'logo link' },
+							{ className: 'logo-icyah box' },
 							(0, _preact.h)('img', { src: '/images/logo.png', width: '162' })
 						),
-						links.map(function (item) {
-							return (0, _preact.h)(
-								_preactRouter.Link,
-								{ href: "/" + item.link, onClick: _this2.closeSideBar.bind(_this2), className: 'link boldFont' },
-								item.text
-							);
-						})
+						(0, _preact.h)(
+							'div',
+							{ className: 'desc-icyah box' },
+							(0, _preact.h)(
+								'div',
+								{ className: 'title' },
+								'ICYAH 2017'
+							),
+							(0, _preact.h)(
+								'div',
+								{ className: 'desc' },
+								'International conference on Youth and Adolescent Health'
+							),
+							(0, _preact.h)(
+								'div',
+								{ className: 'subtitle' },
+								'Young Generation: Our Global Edge'
+							),
+							(0, _preact.h)(
+								'div',
+								{ className: 'details' },
+								'4th - 6th April | Convention Center, NDMC, New Delhi'
+							)
+						),
+						(0, _preact.h)('div', { className: 'logo-iaah box' })
+					),
+					(0, _preact.h)(
+						'div',
+						{ className: 'nav-container' },
+						(0, _preact.h)(
+							'nav',
+							{ className: 'sidebar ' + (this.state.sidebarOpened ? 'opened' : '') },
+							links.map(function (item) {
+								if (typeof item.link === 'string') {
+									return (0, _preact.h)(
+										_preactRouter.Link,
+										{ href: "/" + item.link, onClick: _this2.closeSideBar.bind(_this2), className: 'link' },
+										item.text
+									);
+								} else if (item.link instanceof Array) {
+									return (0, _preact.h)(
+										'div',
+										{ className: 'link' },
+										item.text,
+										(0, _preact.h)(
+											'div',
+											{ className: 'sublinks' },
+											item.link.map(function (subitem) {
+												return (0, _preact.h)(
+													'div',
+													{ className: 'subitem' },
+													(0, _preact.h)(
+														_preactRouter.Link,
+														{ className: 'sublink', href: subitem.link },
+														subitem.text
+													)
+												);
+											})
+										)
+									);
+								}
+							})
+						)
 					),
 					(0, _preact.h)(
 						'i',
@@ -582,6 +647,8 @@ webpackJsonp([0],[
 
 	var _preact = __webpack_require__(1);
 
+	var _preactRouter = __webpack_require__(3);
+
 	__webpack_require__(10);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -605,16 +672,71 @@ webpackJsonp([0],[
 				return (0, _preact.h)(
 					'div',
 					{ className: 'page page-home' },
-					(0, _preact.h)('div', { 'class': 'mobCover' }),
+					(0, _preact.h)(
+						'div',
+						{ 'class': 'mobCover' },
+						(0, _preact.h)(
+							'a',
+							{ href: '/public/pdf/brochure.pdf', target: '_blank', className: 'link link-brocure' },
+							'Brochure'
+						)
+					),
 					(0, _preact.h)(
 						'div',
 						{ className: 'content-home' },
 						(0, _preact.h)(
-							'p',
-							null,
+							'div',
+							{ className: 'sidepanel' },
+							(0, _preact.h)(
+								'div',
+								{ className: 'dates' },
+								(0, _preact.h)(
+									'div',
+									{ className: 'title' },
+									' Important Dates '
+								),
+								(0, _preact.h)(
+									'div',
+									{ className: 'date' },
+									'Registrations open soon.'
+								),
+								(0, _preact.h)(
+									'div',
+									{ className: 'date' },
+									'Abstract submissions open.'
+								)
+							),
+							(0, _preact.h)(
+								'div',
+								{ className: 'venue' },
+								(0, _preact.h)(
+									'div',
+									{ className: 'name' },
+									' Venue: ',
+									(0, _preact.h)(
+										'div',
+										null,
+										'Convention Hall, NDMC New Delhi'
+									)
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									(0, _preact.h)('img', { className: 'pic', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHOHCSBJjKJbpX_wj2_x4Lerjx_WiOiNvEg5lKILTKVBHTWDNU' })
+								)
+							)
+						),
+						(0, _preact.h)(
+							'div',
+							{ className: 'content' },
 							(0, _preact.h)(
 								'div',
 								{ className: 'typl8-alpha head' },
+								'Welcome to ICYAH 2017'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
 								'Dear Friends and Colleagues,'
 							),
 							(0, _preact.h)(
@@ -639,6 +761,11 @@ webpackJsonp([0],[
 									'div',
 									null,
 									'With warm regards'
+								),
+								(0, _preact.h)(
+									'div',
+									null,
+									(0, _preact.h)('img', { className: 'pic-president', src: '/public/images/president.jpg', width: '100' })
 								),
 								(0, _preact.h)(
 									'div',
@@ -1466,12 +1593,16 @@ webpackJsonp([0],[
 							file: e.target.result
 						})
 					}).then(function (res) {
-						if (res.ok) {
+						if (!res.ok) {
+							throw new Error('not good ajax');
+						}
+						return res.json();
+					}).then(function (data) {
+						if (data.done) {
 							that.setState({
 								abstractSubmitted: true,
 								isFormSubmitting: false
 							});
-							console.log('abstract submitted');
 						} else {
 							throw new Error('not good ajax');
 						}
@@ -1560,9 +1691,19 @@ webpackJsonp([0],[
 							'div',
 							null,
 							(0, _preact.h)(
-								'h2',
-								null,
-								'Form submitted'
+								'div',
+								{ className: 'success' },
+								(0, _preact.h)(
+									'svg',
+									{ className: 'icon-success', xmlns: 'http://www.w3.org/2000/svg', fill: '#000000', height: '24', viewBox: '0 0 24 24', width: '24' },
+									(0, _preact.h)('path', { d: 'M0 0h24v24H0z', fill: 'none' }),
+									(0, _preact.h)('path', { d: 'M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' })
+								),
+								(0, _preact.h)(
+									'div',
+									{ className: 'text' },
+									'Form submitted'
+								)
 							)
 						) : (0, _preact.h)(
 							'div',

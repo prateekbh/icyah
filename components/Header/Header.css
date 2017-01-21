@@ -1,30 +1,73 @@
 header{
-	background-color:rgba(0,0,0,0.7);
-	height: 80px;
-	position: relative;
-	z-index: 1;
-
+	.logos{
+		display: flex;
+		max-width: 1024px;
+		margin: auto;
+		.box{
+			flex: 1;
+			display: flex;
+		}
+		.logo-icyah{
+			justify-content: flex-end;
+			align-self: center;
+			padding: 32px;
+		}
+		.desc-icyah{
+			flex-direction: column;
+			align-items: center;
+			flex: 3;
+			padding: 16px;
+			.title{
+				background-color: rgb(208,0, 94);
+				padding: 8px;
+				color: #fff;
+				max-width: 125px;
+				font-weight: 700;
+			}
+			.desc{
+				font-weight: 300;
+				font-size: 18px;
+			}
+			.subtitle{
+				color: rgb(20, 92, 171);
+			}
+			.details{
+				color: #000;
+				font-size: 14px;
+				font-style: italic;
+			}
+		}
+	}
+	.nav-container{
+		background-color: rgb(208,0, 94);
+	}
 	nav.sidebar{
+		position: relative;
+		z-index: 1;
 		margin: auto;
 		text-align: left;
 		max-width: 1024px;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.logo.link {
 		padding: 0;
 	}
 	.link {
-		display: inline-block;
-		height: 80px;
-    vertical-align: middle;
-    padding: 16px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+		position: relative;
+		vertical-align: middle;
+		padding: 8px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
 		color: #fff;
 		text-transform: uppercase;
 		&:hover{
 			background-color:rgba(255,255,255,0.5);
+			.sublinks{
+				display: block;
+			}
 		}
 	}
 	.sidebar-switch{
@@ -32,6 +75,19 @@ header{
 		top:10px;
 		left:10px;
 		display: none;
+	}
+	.sublinks{
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 45px;
+		background: rgb(208,0, 94);
+	}
+	.sublink{
+		color: #fff;
+		padding: 8px;
+		width: 150px;
+		display: inline-block;
 	}
 }
 

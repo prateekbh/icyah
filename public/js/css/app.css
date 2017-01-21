@@ -1,14 +1,83 @@
-header{
-	background-color:rgba(0,0,0,0.7);
-	height: 80px;
-	position: relative;
-	z-index: 1;
+header .logos{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 1024px;
+	margin: auto;
+}
+
+header .logos .box{
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+header .logos .logo-icyah{
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
+	padding: 32px;
+}
+
+header .logos .desc-icyah{
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 3;
+	    -ms-flex: 3;
+	        flex: 3;
+	padding: 16px;
+}
+
+header .logos .desc-icyah .title{
+	background-color: rgb(208,0, 94);
+	padding: 8px;
+	color: #fff;
+	max-width: 125px;
+	font-weight: 700;
+}
+
+header .logos .desc-icyah .desc{
+	font-weight: 300;
+	font-size: 18px;
+}
+
+header .logos .desc-icyah .subtitle{
+	color: rgb(20, 92, 171);
+}
+
+header .logos .desc-icyah .details{
+	color: #000;
+	font-size: 14px;
+	font-style: italic;
+}
+
+header .nav-container{
+	background-color: rgb(208,0, 94);
 }
 
 header nav.sidebar{
+	position: relative;
+	z-index: 1;
 	margin: auto;
 	text-align: left;
 	max-width: 1024px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 header .logo.link {
@@ -16,10 +85,9 @@ header .logo.link {
 }
 
 header .link {
-	display: inline-block;
-	height: 80px;
+	position: relative;
 	vertical-align: middle;
-	padding: 16px;
+	padding: 8px;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -34,7 +102,11 @@ header .link {
 }
 
 header .link:hover{
-	background-color:rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.5);
+}
+
+header .link:hover .sublinks{
+	display: block;
 }
 
 header .sidebar-switch{
@@ -42,6 +114,21 @@ header .sidebar-switch{
 	top:10px;
 	left:10px;
 	display: none;
+}
+
+header .sublinks{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 45px;
+	background: rgb(208,0, 94);
+}
+
+header .sublink{
+	color: #fff;
+	padding: 8px;
+	width: 150px;
+	display: inline-block;
 }
 
 @media screen and (max-width: 1024px) {
@@ -65,8 +152,8 @@ header .sidebar-switch{
 		z-index:2
 	}
 	header nav.sidebar.opened{
-		-webkit-transform:translate3d(0,0,0);
-		        transform:translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		        transform: translate3d(0,0,0);
 	}
 	header .sidebar-switch{
 		cursor: pointer;
@@ -78,32 +165,87 @@ header .sidebar-switch{
 		display: block;
 	}
 }.page.page-home{
-	margin-top: -80px;
+	margin-top: 0px;
 }
-
 .page.page-home .mobCover{
+	position: relative;
 	margin-bottom:15px;
-	height: 500px;
+	height: 400px;
 	width: 100%;
 	background-position: center;
 	background-size: cover;
 	background-image: url('/images/cover.jpg');
 }
-
+.page.page-home .mobCover .link{
+	position: absolute;
+	text-align: center;
+	background: rgba(0,0,0,0.5);
+	width: 200px;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 8px 0;
+	font-size: 20px;
+	right: 10px;
+	bottom: 10px;
+}
+.page.page-home .mobCover .link-registration{
+	bottom: 70px;
+}
 .page.page-home .from{
 	margin-top: 25px;
 }
-
 .page.page-home .head{
 	font-size: 35px;
 	margin-bottom: 25px;
 	font-weight: 700;
+	text-align: center;
 }
-
-@media screen and (max-width: 1024px) {
-	.page.page-home .cover{
-		display: none;
-	}
+.page.page-home .content-home{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.page.page-home .content-home .sidepanel{
+	-webkit-box-flex: 3;
+	    -ms-flex: 3;
+	        flex: 3;
+}
+.page.page-home .content-home .content{
+	-webkit-box-flex: 7;
+	    -ms-flex: 7;
+	        flex: 7;
+}
+.page.page-home .sidepanel{
+	padding-right: 16px;
+}
+.page.page-home .sidepanel .dates{
+	border: 1px solid Black;
+	min-height: 300px;
+}
+.page.page-home .sidepanel .title{
+	padding: 16px;
+	text-align: center;
+	background-color: #FFEB3B;
+}
+.page.page-home .sidepanel .date{
+	font-size: 16px;
+	padding: 12px;
+	border-bottom: 1px dashed;
+	margin: 0 8px;
+}
+.page.page-home .venue{
+	margin-top: 16px;
+	text-align: center;
+}
+.page.page-home .venue .name{
+	padding: 8px;
+}
+.page.page-home .pic{
+	margin-top: 16px;
+	width: 100%;
+}
+.page.page-home .pic-president{
+	margin-top: 16px;
 }.page-fees .typl8-delta{
     margin: 20px auto;
 }
@@ -132,6 +274,13 @@ header .sidebar-switch{
     margin: 8px auto;
     background-color: #009688;
     outline: 0px;
+}
+.page-abstract .icon-success{
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.page-abstract .text{
+    display: inline-block;
 }@charset "UTF-8";
 /*!
 Typeplate : Starter Kit

@@ -1,27 +1,77 @@
 .page.page-home{
-	margin-top: -80px;
+	margin-top: 0px;
 	.mobCover{
+		position: relative;
 		margin-bottom:15px;
-		height: 500px;
+		height: 400px;
 		width: 100%;
 		background-position: center;
 		background-size: cover;
 		background-image: url('/images/cover.jpg');
+		.link{
+			position: absolute;
+			text-align: center;
+			background: rgba(0,0,0,0.5);
+			width: 200px;
+			color: #fff;
+			text-transform: uppercase;
+			padding: 8px 0;
+			font-size: 20px;
+			right: 10px;
+			bottom: 10px;
+		}
+		.link-registration{
+			bottom: 70px;
+		}
 	}
 	.from{
 		margin-top: 25px;
 	}
 	.head{
 		font-size: 35px;
-    margin-bottom: 25px;
-    font-weight: 700;
+		margin-bottom: 25px;
+		font-weight: 700;
+		text-align: center;
 	}
-}
-
-@media screen and (max-width: 1024px) {
-	.page.page-home{
-		.cover{
-			display: none;
+	.content-home{
+		display: flex;
+		.sidepanel{
+			flex: 3;
 		}
+		.content{
+			flex: 7;
+		}
+	}
+	.sidepanel{
+		padding-right: 16px;
+		.dates{
+			border: 1px solid Black;
+			min-height: 300px;
+		}
+		.title{
+			padding: 16px;
+			text-align: center;
+			background-color: #FFEB3B;
+		}
+		.date{
+			font-size: 16px;
+			padding: 12px;
+			border-bottom: 1px dashed;
+			margin: 0 8px;
+		}
+	}
+	.venue{
+		margin-top: 16px;
+		text-align: center;
+		.name{
+			padding: 8px;
+		}
+	}
+	.pic{
+		margin-top: 16px;
+		width: 100%;
+	}
+	.pic-president{
+		margin-top: 16px;
 	}
 }
