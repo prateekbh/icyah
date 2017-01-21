@@ -3,6 +3,8 @@ import App from './App';
 import './index.css';
 
 render(
-  <App />,
+  <App user={Object.assign({},window.user)}/>,
   document.getElementById('root')
 );
+
+delete window.user;

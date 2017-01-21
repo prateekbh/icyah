@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import './Abstract.css';
+import LoginSignup from '../LoginSignup/LoginSignup';
 
 export default class Abstract extends Component {
 	constructor(){
@@ -28,8 +29,9 @@ export default class Abstract extends Component {
 					name: aname,
 					email: aemail,
 					file: e.target.result
-				})
-			})
+				}),
+				credentials: 'include',
+			}) 
 			.then(res => {
 				if(!res.ok){
 					throw new Error('not good ajax');
@@ -59,6 +61,7 @@ export default class Abstract extends Component {
 
 	}
 	render() {
+		console.log('user',this.props.user);
 		return (
 			<div className='page page-abstract'>
 				<div className='content-abstract'>
@@ -74,24 +77,26 @@ export default class Abstract extends Component {
 							<li>Duration for Oral presentation will be restricted to 10 minutes (8 minutes for presentation and 2 minutes for discussion).</li>
 						</ol>
 					</p>
-					{this.state.abstractSubmitted ?
+					{ 
+						(this.props.user && this.props.user.email) ?
+						(this.props.user.abstractSubmitted ?
 							<div>
 								<div className='success'>
 									<svg className='icon-success' xmlns="http://www.w3.org/2000/svg" fill="#000000" height="24" viewBox="0 0 24 24" width="24">
-									    <path d="M0 0h24v24H0z" fill="none"/>
-									    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+										<path d="M0 0h24v24H0z" fill="none"/>
+										<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
 									</svg>
-									<div className='text'>Form submitted</div>
+									<div className='text'>You abstract is under review</div>
 								</div>
 							</div> :
 							<div>
 								<h2 className="typl8-delta">Submit Abstract</h2>
 								<form action="javascript:" method="POST" ref={(frm)=> {this.frm = frm}} onSubmit={this.submitForm.bind(this)}>
 									<div>
-										<label>Name</label><input class='typl8-zeta' type="text" name="name" required />
+										<label>Name of presenter</label><input class='typl8-zeta' type="text" name="name" required value={this.props.user.name}/>
 									</div>
 									<div>
-										<label>EMail Id</label><input class='typl8-zeta' type="email" name="email" required />
+										<label>EMail Id</label><input class='typl8-zeta' type="email" name="email" required value={this.props.user.email}/>
 									</div>
 									<div>
 										<input type="file" name="abstractfile" required accept=".pdf" />
@@ -100,8 +105,8 @@ export default class Abstract extends Component {
 										<input type="submit" class="submit" value={this.state.isFormSubmitting?'Sending':'Send'} />
 									</div>
 								</form>
-							</div>
-					}
+							</div>) : <LoginSignup {...this.props}/>
+						}
 				</div>
 			</div>
 		);

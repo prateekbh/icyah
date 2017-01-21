@@ -10,11 +10,13 @@ webpackJsonp([0],[
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(27);
+	__webpack_require__(30);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _preact.render)((0, _preact.h)(_App2.default, null), document.getElementById('root'));
+	(0, _preact.render)((0, _preact.h)(_App2.default, { user: Object.assign({}, window.user) }), document.getElementById('root'));
+
+	delete window.user;
 
 /***/ },
 /* 1 */,
@@ -63,9 +65,9 @@ webpackJsonp([0],[
 
 	var _Abstract2 = _interopRequireDefault(_Abstract);
 
-	__webpack_require__(23);
+	__webpack_require__(26);
 
-	__webpack_require__(25);
+	__webpack_require__(28);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85,6 +87,20 @@ webpackJsonp([0],[
 	  }
 
 	  _createClass(App, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.setState({
+	        user: this.props.user
+	      });
+	    }
+	  }, {
+	    key: 'doneLogin',
+	    value: function doneLogin(data) {
+	      this.setState({
+	        user: data
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return (0, _preact.h)(
@@ -102,7 +118,7 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_Awards2.default, { path: '/awards' }),
 	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' }),
 	            (0, _preact.h)(_Fees2.default, { path: '/fees' }),
-	            (0, _preact.h)(_Abstract2.default, { path: '/abstract' })
+	            (0, _preact.h)(_Abstract2.default, { user: this.state.user, doneLogin: this.doneLogin.bind(this), path: '/abstract' })
 	          )
 	        )
 	      );
@@ -122,277 +138,280 @@ webpackJsonp([0],[
 		 true ? module.exports = factory(__webpack_require__(1)) :
 		typeof define === 'function' && define.amd ? define(['preact'], factory) :
 		(global.preactRouter = factory(global.preact));
-	}(this, function (preact) { 'use strict';
+	}(this, (function (preact) { 'use strict';
 
-		var babelHelpers = {};
+	var EMPTY$1 = {};
 
-		babelHelpers.classCallCheck = function (instance, Constructor) {
-		  if (!(instance instanceof Constructor)) {
-		    throw new TypeError("Cannot call a class as a function");
-		  }
-		};
+	function exec(url, route) {
+		var opts = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : EMPTY$1;
 
-		babelHelpers.extends = Object.assign || function (target) {
-		  for (var i = 1; i < arguments.length; i++) {
-		    var source = arguments[i];
-
-		    for (var key in source) {
-		      if (Object.prototype.hasOwnProperty.call(source, key)) {
-		        target[key] = source[key];
-		      }
-		    }
-		  }
-
-		  return target;
-		};
-
-		babelHelpers.inherits = function (subClass, superClass) {
-		  if (typeof superClass !== "function" && superClass !== null) {
-		    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-		  }
-
-		  subClass.prototype = Object.create(superClass && superClass.prototype, {
-		    constructor: {
-		      value: subClass,
-		      enumerable: false,
-		      writable: true,
-		      configurable: true
-		    }
-		  });
-		  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-		};
-
-		babelHelpers.objectWithoutProperties = function (obj, keys) {
-		  var target = {};
-
-		  for (var i in obj) {
-		    if (keys.indexOf(i) >= 0) continue;
-		    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-		    target[i] = obj[i];
-		  }
-
-		  return target;
-		};
-
-		babelHelpers.possibleConstructorReturn = function (self, call) {
-		  if (!self) {
-		    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-		  }
-
-		  return call && (typeof call === "object" || typeof call === "function") ? call : self;
-		};
-
-		babelHelpers;
-
-		var EMPTY$1 = {};
-
-		function exec(url, route) {
-			var opts = arguments.length <= 2 || arguments[2] === undefined ? EMPTY$1 : arguments[2];
-
-			var reg = /(?:\?([^#]*))?(#.*)?$/,
-			    c = url.match(reg),
-			    matches = {},
-			    ret = void 0;
-			if (c && c[1]) {
-				var p = c[1].split('&');
-				for (var i = 0; i < p.length; i++) {
-					var r = p[i].split('=');
-					matches[decodeURIComponent(r[0])] = decodeURIComponent(r.slice(1).join('='));
-				}
+		var reg = /(?:\?([^#]*))?(#.*)?$/,
+		    c = url.match(reg),
+		    matches = {},
+		    ret = void 0;
+		if (c && c[1]) {
+			var p = c[1].split('&');
+			for (var i = 0; i < p.length; i++) {
+				var r = p[i].split('=');
+				matches[decodeURIComponent(r[0])] = decodeURIComponent(r.slice(1).join('='));
 			}
-			url = segmentize(url.replace(reg, ''));
-			route = segmentize(route || '');
-			var max = Math.max(url.length, route.length);
-			for (var _i = 0; _i < max; _i++) {
-				if (route[_i] && route[_i].charAt(0) === ':') {
-					var param = route[_i].replace(/(^\:|[+*?]+$)/g, ''),
-					    flags = (route[_i].match(/[+*?]+$/) || EMPTY$1)[0] || '',
-					    plus = ~flags.indexOf('+'),
-					    star = ~flags.indexOf('*'),
-					    val = url[_i] || '';
-					if (!val && !star && (flags.indexOf('?') < 0 || plus)) {
-						ret = false;
-						break;
-					}
-					matches[param] = decodeURIComponent(val);
-					if (plus || star) {
-						matches[param] = url.slice(_i).map(decodeURIComponent).join('/');
-						break;
-					}
-				} else if (route[_i] !== url[_i]) {
+		}
+		url = segmentize(url.replace(reg, ''));
+		route = segmentize(route || '');
+		var max = Math.max(url.length, route.length);
+		for (var _i = 0; _i < max; _i++) {
+			if (route[_i] && route[_i].charAt(0) === ':') {
+				var param = route[_i].replace(/(^\:|[+*?]+$)/g, ''),
+				    flags = (route[_i].match(/[+*?]+$/) || EMPTY$1)[0] || '',
+				    plus = ~flags.indexOf('+'),
+				    star = ~flags.indexOf('*'),
+				    val = url[_i] || '';
+				if (!val && !star && (flags.indexOf('?') < 0 || plus)) {
 					ret = false;
 					break;
 				}
+				matches[param] = decodeURIComponent(val);
+				if (plus || star) {
+					matches[param] = url.slice(_i).map(decodeURIComponent).join('/');
+					break;
+				}
+			} else if (route[_i] !== url[_i]) {
+				ret = false;
+				break;
 			}
-			if (opts.default !== true && ret === false) return false;
-			return matches;
+		}
+		if (opts.default !== true && ret === false) return false;
+		return matches;
+	}
+
+	function pathRankSort(a, b) {
+		var aAttr = a.attributes || EMPTY$1,
+		    bAttr = b.attributes || EMPTY$1;
+		if (aAttr.default) return 1;
+		if (bAttr.default) return -1;
+		var diff = rank(aAttr.path) - rank(bAttr.path);
+		return diff || aAttr.path.length - bAttr.path.length;
+	}
+
+	function segmentize(url) {
+		return strip(url).split('/');
+	}
+
+	function rank(url) {
+		return (strip(url).match(/\/+/g) || '').length;
+	}
+
+	function strip(url) {
+		return url.replace(/(^\/+|\/+$)/g, '');
+	}
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var customHistory = null;
+
+	var ROUTERS = [];
+
+	var EMPTY = {};
+
+	// hangs off all elements created by preact
+	var ATTR_KEY = typeof Symbol !== 'undefined' ? Symbol.for('preactattr') : '__preactattr_';
+
+	function isPreactElement(node) {
+		return ATTR_KEY in node;
+	}
+
+	function setUrl(url) {
+		var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'push';
+
+		if (customHistory && customHistory[type]) {
+			customHistory[type](url);
+		} else if (typeof history !== 'undefined' && history[type + 'State']) {
+			history[type + 'State'](null, null, url);
+		}
+	}
+
+	function getCurrentUrl() {
+		var url = void 0;
+		if (customHistory && customHistory.location) {
+			url = customHistory.location;
+		} else if (customHistory && customHistory.getCurrentLocation) {
+			url = customHistory.getCurrentLocation();
+		} else {
+			url = typeof location !== 'undefined' ? location : EMPTY;
+		}
+		return '' + (url.pathname || '') + (url.search || '');
+	}
+
+	function route(url) {
+		var replace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+		if (typeof url !== 'string' && url.url) {
+			replace = url.replace;
+			url = url.url;
 		}
 
-		function pathRankSort(a, b) {
-			var aAttr = a.attributes || EMPTY$1,
-			    bAttr = b.attributes || EMPTY$1;
-			if (aAttr.default) return 1;
-			if (bAttr.default) return -1;
-			var diff = rank(aAttr.path) - rank(bAttr.path);
-			return diff || aAttr.path.length - bAttr.path.length;
+		// only push URL into history if we can handle it
+		if (canRoute(url)) {
+			setUrl(url, replace ? 'replace' : 'push');
 		}
 
-		function segmentize(url) {
-			return strip(url).split('/');
+		return routeTo(url);
+	}
+
+	/** Check if the given URL can be handled by any router instances. */
+	function canRoute(url) {
+		for (var i = ROUTERS.length; i--;) {
+			if (ROUTERS[i].canRoute(url)) return true;
 		}
+		return false;
+	}
 
-		function rank(url) {
-			return (strip(url).match(/\/+/g) || '').length;
-		}
-
-		function strip(url) {
-			return url.replace(/(^\/+|\/+$)/g, '');
-		}
-
-		var ROUTERS = [];
-
-		var EMPTY = {};
-
-		function route(url) {
-			var replace = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
-
-			if (typeof url !== 'string' && url.url) {
-				replace = url.replace;
-				url = url.url;
+	/** Tell all router instances to handle the given URL.  */
+	function routeTo(url) {
+		var didRoute = false;
+		for (var i = 0; i < ROUTERS.length; i++) {
+			if (ROUTERS[i].routeTo(url) === true) {
+				didRoute = true;
 			}
-			if (typeof history !== 'undefined' && history.pushState) {
-				if (replace === true) {
-					history.replaceState(null, null, url);
-				} else {
-					history.pushState(null, null, url);
+		}
+		return didRoute;
+	}
+
+	function routeFromLink(node) {
+		// only valid elements
+		if (!node || !node.getAttribute) return;
+
+		var href = node.getAttribute('href'),
+		    target = node.getAttribute('target');
+
+		// ignore links with targets and non-path URLs
+		if (!href || !href.match(/^\//g) || target && !target.match(/^_?self$/i)) return;
+
+		// attempt to route, if no match simply cede control to browser
+		return route(href);
+	}
+
+	function handleLinkClick(e) {
+		if (e.button !== 0) return;
+		routeFromLink(e.currentTarget || e.target || this);
+		return prevent(e);
+	}
+
+	function prevent(e) {
+		if (e) {
+			if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+			if (e.stopPropagation) e.stopPropagation();
+			e.preventDefault();
+		}
+		return false;
+	}
+
+	function delegateLinkHandler(e) {
+		// ignore events the browser takes care of already:
+		if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
+
+		var t = e.target;
+		do {
+			if (String(t.nodeName).toUpperCase() === 'A' && t.getAttribute('href') && isPreactElement(t)) {
+				if (e.button !== 0) return;
+				// if link is handled by the router, prevent browser defaults
+				if (routeFromLink(t)) {
+					return prevent(e);
 				}
 			}
-			return routeTo(url);
-		}
+		} while (t = t.parentNode);
+	}
 
-		function routeTo(url) {
-			var didRoute = false;
-			ROUTERS.forEach(function (router) {
-				if (router.routeTo(url) === true) {
-					didRoute = true;
-				}
-			});
-			return didRoute;
-		}
+	if (typeof addEventListener === 'function') {
+		addEventListener('popstate', function () {
+			return routeTo(getCurrentUrl());
+		});
+		addEventListener('click', delegateLinkHandler);
+	}
 
-		function getCurrentUrl() {
-			var url = typeof location !== 'undefined' ? location : EMPTY;
-			return '' + (url.pathname || '') + (url.search || '');
-		}
+	var Link = function Link(props) {
+		return preact.h('a', _extends({}, props, { onClick: handleLinkClick }));
+	};
 
-		function routeFromLink(node) {
-			// only valid elements
-			if (!node || !node.getAttribute) return;
+	var Router = function (_Component) {
+		_inherits(Router, _Component);
 
-			var href = node.getAttribute('href'),
-			    target = node.getAttribute('target');
+		function Router(props) {
+			_classCallCheck(this, Router);
 
-			// ignore links with targets and non-path URLs
-			if (!href || !href.match(/^\//g) || target && !target.match(/^_?self$/i)) return;
+			var _this = _possibleConstructorReturn(this, _Component.call(this, props));
 
-			// attempt to route, if no match simply cede control to browser
-			return route(href);
-		}
-
-		function handleLinkClick(e) {
-			routeFromLink(e.currentTarget || e.target || this);
-			return prevent(e);
-		}
-
-		function prevent(e) {
-			if (e) {
-				if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-				if (e.stopPropagation) e.stopPropagation();
-				e.preventDefault();
+			if (props.history) {
+				customHistory = props.history;
 			}
-			return false;
+
+			_this.state = {
+				url: _this.props.url || getCurrentUrl()
+			};
+			return _this;
 		}
 
-		function delegateLinkHandler(e) {
-			// ignore events the browser takes care of already:
-			if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
-
-			var t = e.target;
-			do {
-				if (String(t.nodeName).toUpperCase() === 'A' && t.getAttribute('href')) {
-					// if link is handled by the router, prevent browser defaults
-					if (routeFromLink(t)) {
-						return prevent(e);
-					}
-				}
-			} while (t = t.parentNode);
-		}
-
-		if (typeof addEventListener === 'function') {
-			addEventListener('popstate', function () {
-				return routeTo(getCurrentUrl());
-			});
-			addEventListener('click', delegateLinkHandler);
-		}
-
-		var Link = function (_ref) {
-			var children = _ref.children;
-			var props = babelHelpers.objectWithoutProperties(_ref, ['children']);
-			return preact.h(
-				'a',
-				babelHelpers.extends({}, props, { onClick: handleLinkClick }),
-				children
-			);
+		Router.prototype.shouldComponentUpdate = function shouldComponentUpdate(props) {
+			if (props.static !== true) return true;
+			return props.url !== this.props.url || props.onChange !== this.props.onChange;
 		};
 
-		var Router = function (_Component) {
-			babelHelpers.inherits(Router, _Component);
+		/** Check if the given URL can be matched against any children */
 
-			function Router() {
-				var _temp, _this, _ret;
 
-				babelHelpers.classCallCheck(this, Router);
+		Router.prototype.canRoute = function canRoute(url) {
+			return this.getMatchingChildren(this.props.children, url, false).length > 0;
+		};
 
-				for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-					args[_key] = arguments[_key];
-				}
+		/** Re-render children with a new URL to match against. */
 
-				return _ret = (_temp = (_this = babelHelpers.possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = {
-					url: _this.props.url || getCurrentUrl()
-				}, _temp), babelHelpers.possibleConstructorReturn(_this, _ret);
-			}
 
-			Router.prototype.shouldComponentUpdate = function shouldComponentUpdate(props) {
-				if (props.static !== true) return true;
-				return props.url !== this.props.url || props.onChange !== this.props.onChange;
-			};
+		Router.prototype.routeTo = function routeTo(url) {
+			this._didRoute = false;
+			this.setState({ url: url });
 
-			Router.prototype.routeTo = function routeTo(url) {
-				this._didRoute = false;
-				this.setState({ url: url });
-				this.forceUpdate();
-				return this._didRoute;
-			};
+			// if we're in the middle of an update, don't synchronously re-route.
+			if (this.updating) return this.canRoute(url);
 
-			Router.prototype.componentWillMount = function componentWillMount() {
-				ROUTERS.push(this);
-			};
+			this.forceUpdate();
+			return this._didRoute;
+		};
 
-			Router.prototype.componentWillUnmount = function componentWillUnmount() {
-				ROUTERS.splice(ROUTERS.indexOf(this), 1);
-			};
+		Router.prototype.componentWillMount = function componentWillMount() {
+			ROUTERS.push(this);
+			this.updating = true;
+		};
 
-			Router.prototype.render = function render(_ref2, _ref3) {
-				var children = _ref2.children;
-				var onChange = _ref2.onChange;
-				var url = _ref3.url;
+		Router.prototype.componentDidMount = function componentDidMount() {
+			this.updating = false;
+		};
 
-				var active = children.slice().sort(pathRankSort).filter(function (_ref4) {
-					var attributes = _ref4.attributes;
+		Router.prototype.componentWillUnmount = function componentWillUnmount() {
+			ROUTERS.splice(ROUTERS.indexOf(this), 1);
+		};
 
-					var path = attributes.path,
-					    matches = exec(url, path, attributes);
-					if (matches) {
+		Router.prototype.componentWillUpdate = function componentWillUpdate() {
+			this.updating = true;
+		};
+
+		Router.prototype.componentDidUpdate = function componentDidUpdate() {
+			this.updating = false;
+		};
+
+		Router.prototype.getMatchingChildren = function getMatchingChildren(children, url, invoke) {
+			return children.slice().sort(pathRankSort).filter(function (_ref) {
+				var attributes = _ref.attributes;
+
+				var path = attributes.path,
+				    matches = exec(url, path, attributes);
+				if (matches) {
+					if (invoke !== false) {
 						attributes.url = url;
 						attributes.matches = matches;
 						// copy matches onto props
@@ -401,49 +420,60 @@ webpackJsonp([0],[
 								attributes[i] = matches[i];
 							}
 						}
-						return true;
 					}
-				});
-
-				var current = active[0] || null;
-				this._didRoute = !!current;
-
-				var previous = this.previousUrl;
-				if (url !== previous) {
-					this.previousUrl = url;
-					if (typeof onChange === 'function') {
-						onChange({
-							router: this,
-							url: url,
-							previous: previous,
-							active: active,
-							current: current
-						});
-					}
+					return true;
 				}
-
-				return current;
-			};
-
-			return Router;
-		}(preact.Component);
-
-		var Route = function (_ref5) {
-			var RoutedComponent = _ref5.component;
-			var url = _ref5.url;
-			var matches = _ref5.matches;
-			return preact.h(RoutedComponent, { url: url, matches: matches });
+			});
 		};
 
-		Router.route = route;
-		Router.Router = Router;
-		Router.Route = Route;
-		Router.Link = Link;
+		Router.prototype.render = function render(_ref2, _ref3) {
+			var children = _ref2.children,
+			    onChange = _ref2.onChange;
+			var url = _ref3.url;
+
+			var active = this.getMatchingChildren(children, url, true);
+
+			var current = active[0] || null;
+			this._didRoute = !!current;
+
+			var previous = this.previousUrl;
+			if (url !== previous) {
+				this.previousUrl = url;
+				if (typeof onChange === 'function') {
+					onChange({
+						router: this,
+						url: url,
+						previous: previous,
+						active: active,
+						current: current
+					});
+				}
+			}
+
+			return current;
+		};
 
 		return Router;
+	}(preact.Component);
 
-	}));
+	var Route = function Route(_ref4) {
+		var component = _ref4.component,
+		    url = _ref4.url,
+		    matches = _ref4.matches;
+
+		return preact.h(component, { url: url, matches: matches });
+	};
+
+	Router.route = route;
+	Router.Router = Router;
+	Router.Route = Route;
+	Router.Link = Link;
+
+	return Router;
+
+	})));
 	//# sourceMappingURL=preact-router.js.map
+
 
 /***/ },
 /* 4 */
@@ -1547,6 +1577,12 @@ webpackJsonp([0],[
 
 	__webpack_require__(21);
 
+	var _LoginSignup = __webpack_require__(23);
+
+	var _LoginSignup2 = _interopRequireDefault(_LoginSignup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1591,7 +1627,8 @@ webpackJsonp([0],[
 							name: aname,
 							email: aemail,
 							file: e.target.result
-						})
+						}),
+						credentials: 'include'
 					}).then(function (res) {
 						if (!res.ok) {
 							throw new Error('not good ajax');
@@ -1623,6 +1660,7 @@ webpackJsonp([0],[
 			value: function render() {
 				var _this3 = this;
 
+				console.log('user', this.props.user);
 				return (0, _preact.h)(
 					'div',
 					{ className: 'page page-abstract' },
@@ -1687,7 +1725,7 @@ webpackJsonp([0],[
 								)
 							)
 						),
-						this.state.abstractSubmitted ? (0, _preact.h)(
+						this.props.user && this.props.user.email ? this.props.user.abstractSubmitted ? (0, _preact.h)(
 							'div',
 							null,
 							(0, _preact.h)(
@@ -1697,12 +1735,12 @@ webpackJsonp([0],[
 									'svg',
 									{ className: 'icon-success', xmlns: 'http://www.w3.org/2000/svg', fill: '#000000', height: '24', viewBox: '0 0 24 24', width: '24' },
 									(0, _preact.h)('path', { d: 'M0 0h24v24H0z', fill: 'none' }),
-									(0, _preact.h)('path', { d: 'M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z' })
+									(0, _preact.h)('path', { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z' })
 								),
 								(0, _preact.h)(
 									'div',
 									{ className: 'text' },
-									'Form submitted'
+									'You abstract is under review'
 								)
 							)
 						) : (0, _preact.h)(
@@ -1724,9 +1762,9 @@ webpackJsonp([0],[
 									(0, _preact.h)(
 										'label',
 										null,
-										'Name'
+										'Name of presenter'
 									),
-									(0, _preact.h)('input', { 'class': 'typl8-zeta', type: 'text', name: 'name', required: true })
+									(0, _preact.h)('input', { 'class': 'typl8-zeta', type: 'text', name: 'name', required: true, value: this.props.user.name })
 								),
 								(0, _preact.h)(
 									'div',
@@ -1736,7 +1774,7 @@ webpackJsonp([0],[
 										null,
 										'EMail Id'
 									),
-									(0, _preact.h)('input', { 'class': 'typl8-zeta', type: 'email', name: 'email', required: true })
+									(0, _preact.h)('input', { 'class': 'typl8-zeta', type: 'email', name: 'email', required: true, value: this.props.user.email })
 								),
 								(0, _preact.h)(
 									'div',
@@ -1749,7 +1787,7 @@ webpackJsonp([0],[
 									(0, _preact.h)('input', { type: 'submit', 'class': 'submit', value: this.state.isFormSubmitting ? 'Sending' : 'Send' })
 								)
 							)
-						)
+						) : (0, _preact.h)(_LoginSignup2.default, this.props)
 					)
 				);
 			}
@@ -1769,20 +1807,242 @@ webpackJsonp([0],[
 /***/ },
 /* 22 */,
 /* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	__webpack_require__(24);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Fees = function (_Component) {
+	    _inherits(Fees, _Component);
+
+	    function Fees() {
+	        _classCallCheck(this, Fees);
+
+	        var _this = _possibleConstructorReturn(this, (Fees.__proto__ || Object.getPrototypeOf(Fees)).call(this));
+
+	        _this.state = {
+	            tab: 'LOGIN'
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Fees, [{
+	        key: 'login',
+	        value: function login() {
+	            var _this2 = this;
+
+	            fetch('/user/login', {
+	                method: 'POST',
+	                headers: new Headers({
+	                    'content-type': 'application/json'
+	                }),
+	                credentials: 'include',
+	                body: JSON.stringify({
+	                    username: this.uname.value,
+	                    password: this.pwd.value
+	                })
+	            }).then(function (res) {
+	                if (res.ok) {
+	                    return res.json();
+	                } else {
+	                    throw new Error('');
+	                }
+	            }).then(function (res) {
+	                _this2.props.doneLogin && _this2.props.doneLogin(res);
+	            }).catch(function (e) {
+	                alert('Cannot login');
+	            });
+	        }
+	    }, {
+	        key: 'signup',
+	        value: function signup() {
+	            var _this3 = this;
+
+	            fetch('/user/create', {
+	                method: 'POST',
+	                headers: new Headers({
+	                    'content-type': 'application/json'
+	                }),
+	                credentials: 'include',
+	                body: JSON.stringify({
+	                    username: this.reguname.value,
+	                    password: this.regpwd.value,
+	                    name: this.regname.value,
+	                    email: this.regemail.value,
+	                    phone: this.regphone.value
+	                })
+	            }).then(function (res) {
+	                if (res.ok) {
+	                    return res.json();
+	                } else {
+	                    throw new Error('');
+	                }
+	            }).then(function (res) {
+	                _this3.props.doneLogin && _this3.props.doneLogin(res);
+	            }).catch(function (e) {
+	                alert('Cannot login');
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this4 = this;
+
+	            return (0, _preact.h)(
+	                'div',
+	                { className: 'credentials' },
+	                (0, _preact.h)(
+	                    'div',
+	                    { className: 'tabs' },
+	                    (0, _preact.h)(
+	                        'div',
+	                        {
+	                            className: 'login tab ' + (this.state.tab === 'LOGIN' ? 'active' : ''),
+	                            onClick: function onClick() {
+	                                _this4.setState({
+	                                    tab: 'LOGIN'
+	                                });
+	                            } },
+	                        'Login'
+	                    ),
+	                    (0, _preact.h)(
+	                        'div',
+	                        {
+	                            className: 'signup tab ' + (this.state.tab === 'SIGNUP' ? 'active' : ''),
+	                            onClick: function onClick() {
+	                                _this4.setState({
+	                                    tab: 'SIGNUP'
+	                                });
+	                            } },
+	                        'Signup'
+	                    )
+	                ),
+	                (0, _preact.h)(
+	                    'div',
+	                    { className: 'content' },
+	                    this.state.tab === 'LOGIN' && (0, _preact.h)(
+	                        'div',
+	                        { className: 'controls' },
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta username', ref: function ref(e) {
+	                                    return _this4.uname = e;
+	                                }, placeholder: 'username' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta password', type: 'password', ref: function ref(e) {
+	                                    return _this4.pwd = e;
+	                                }, placeholder: 'password' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)(
+	                                'button',
+	                                { onClick: this.login.bind(this) },
+	                                'Login'
+	                            )
+	                        )
+	                    ),
+	                    this.state.tab === 'SIGNUP' && (0, _preact.h)(
+	                        'div',
+	                        { className: 'controls' },
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta username', ref: function ref(e) {
+	                                    return _this4.reguname = e;
+	                                }, placeholder: 'username' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta password', type: 'password', ref: function ref(e) {
+	                                    return _this4.regpwd = e;
+	                                }, placeholder: 'password' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
+	                                    return _this4.regname = e;
+	                                }, placeholder: 'full name' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
+	                                    return _this4.regemail = e;
+	                                }, type: 'email', placeholder: 'email id' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
+	                                    return _this4.regphone = e;
+	                                }, maxLength: '10', placeholder: 'phonenumber' })
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)(
+	                                'button',
+	                                { onClick: this.signup.bind(this) },
+	                                'Register'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Fees;
+	}(_preact.Component);
+
+	exports.default = Fees;
+
+/***/ },
+/* 24 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 26 */,
-/* 27 */
+/* 27 */,
+/* 28 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 29 */,
+/* 30 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

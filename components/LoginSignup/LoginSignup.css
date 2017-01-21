@@ -1,0 +1,15 @@
+.credentials{
+    display: inline-block;
+    padding: 16px;
+    border: 1px solid;
+    .tab{
+        display: inline-block;
+        width: 49%;
+        color: #999;
+        cursor: pointer;
+        &.active{
+            color: #333;
+            font-weight: 700;
+        }
+    }
+}

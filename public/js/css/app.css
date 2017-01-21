@@ -255,32 +255,55 @@ header .sublink{
 .page-fees td{
     padding: 8px;
 }.page-abstract label{
-    display: inline-block;
-    width: 100px;
+	display: inline-block;
+	width: 200px;
 }
-.page-abstract input.typl8-zeta{
-    width: 250px;
-    border : 0px solid #00aaee;
-    border-bottom-width: 1px;
-    outline: 0px;
+
+
+.page-abstract .submit, .page-abstract button{
+	border:0px;
+	color: #fff;
+	padding: 8px 16px;
+	min-width: 150px;
+	font-size: 20px;
+	border-radius: 3px;
+	margin: 8px auto;
+	background-color: #009688;
+	outline: 0px;
 }
-.page-abstract .submit{
-    border:0px;
-    color: #fff;
-    padding: 8px 16px;
-    min-width: 150px;
-    font-size: 20px;
-    border-radius: 3px;
-    margin: 8px auto;
-    background-color: #009688;
-    outline: 0px;
-}
+
+
 .page-abstract .icon-success{
-    vertical-align: middle;
-    margin-right: 15px;
+	vertical-align: middle;
+	margin-right: 15px;
 }
+
+
 .page-abstract .text{
+	display: inline-block;
+}
+
+
+input.typl8-zeta{
+	width: 250px;
+	border : 0px solid #00aaee;
+	margin-top: 16px;
+	border-bottom-width: 1px;
+	outline: 0px;
+}.credentials{
     display: inline-block;
+    padding: 16px;
+    border: 1px solid;
+}
+.credentials .tab{
+    display: inline-block;
+    width: 49%;
+    color: #999;
+    cursor: pointer
+}
+.credentials .tab.active{
+    color: #333;
+    font-weight: 700;
 }@charset "UTF-8";
 /*!
 Typeplate : Starter Kit

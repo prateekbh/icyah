@@ -10,6 +10,16 @@ import Abstract from './components/Abstract/Abstract';
 import './type.css';
 import './App.css';
 export default class App extends Component {
+  componentDidMount(){
+    this.setState({
+      user: this.props.user,
+    });
+  }
+  doneLogin(data){
+    this.setState({
+      user: data,
+    });
+  }
   render() {
     return (
       <div id="app">
@@ -21,7 +31,7 @@ export default class App extends Component {
             <Awards path="/awards"/>
             <AboutUs path="/aboutus"/>
             <Fees path="/fees"/>
-            <Abstract path="/abstract" />
+            <Abstract user={this.state.user} doneLogin={this.doneLogin.bind(this)} path="/abstract" />
           </Router>
         </div>
       </div>
