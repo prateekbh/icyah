@@ -1,5 +1,5 @@
 const express = require('express');
-const Razorpay = require('Razorpay');
+const Razorpay = require('razorpay');
 const router = express.Router();
 const {initUsers, loginUser, registerUser, userPaid} = require('../utils/userUtils');
 
