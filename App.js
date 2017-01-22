@@ -9,7 +9,7 @@ import AboutIaah from './components/AboutUs/AboutIaah';
 import Fees from './components/Fees/Fees';
 import Abstract from './components/Abstract/Abstract';
 import Cancellations from './components/Registration/Cancellation';
-
+import RegistrationFees from './components/Registration/RegistrationFees';
 import './type.css';
 import './App.css';
 export default class App extends Component {
@@ -37,6 +37,7 @@ export default class App extends Component {
             <Fees path="/fees"/>
             <Abstract user={this.state.user} doneLogin={this.doneLogin.bind(this)} path="/abstract" />
             <Cancellations path='/registration/cancellation' />
+            <RegistrationFees path='/registration/fees' />
           </Router>
         </div>
       </div>

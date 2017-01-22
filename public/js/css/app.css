@@ -315,6 +315,12 @@ input.typl8-zeta{
 .credentials .tab.active{
     color: #333;
     font-weight: 700;
+}.page-regfees .cell{
+    border-right: 1px solid;
+    width: 33%
+}
+.page-regfees .cell:last-child{
+    border-right-width: 0px
 }@charset "UTF-8";
 /*!
 Typeplate : Starter Kit

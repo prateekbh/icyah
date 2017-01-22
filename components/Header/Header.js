@@ -26,14 +26,6 @@ const links=[
 				text: 'Cancellation'
 			},
 			{
-				link:'/registration/privacypolicy',
-				text: 'Privacy Policy'
-			},
-			{
-				link:'/registration/tnc',
-				text: 'Terms'
-			},
-			{
 				link:'/registration/fees',
 				text: 'Fees'
 			},

@@ -73,6 +73,10 @@ webpackJsonp([0],[
 
 	var _Cancellation2 = _interopRequireDefault(_Cancellation);
 
+	var _RegistrationFees = __webpack_require__(34);
+
+	var _RegistrationFees2 = _interopRequireDefault(_RegistrationFees);
+
 	__webpack_require__(26);
 
 	__webpack_require__(28);
@@ -128,7 +132,8 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' }),
 	            (0, _preact.h)(_Fees2.default, { path: '/fees' }),
 	            (0, _preact.h)(_Abstract2.default, { user: this.state.user, doneLogin: this.doneLogin.bind(this), path: '/abstract' }),
-	            (0, _preact.h)(_Cancellation2.default, { path: '/registration/cancellation' })
+	            (0, _preact.h)(_Cancellation2.default, { path: '/registration/cancellation' }),
+	            (0, _preact.h)(_RegistrationFees2.default, { path: '/registration/fees' })
 	          )
 	        )
 	      );
@@ -525,12 +530,6 @@ webpackJsonp([0],[
 		link: [{
 			link: '/registration/cancellation',
 			text: 'Cancellation'
-		}, {
-			link: '/registration/privacypolicy',
-			text: 'Privacy Policy'
-		}, {
-			link: '/registration/tnc',
-			text: 'Terms'
 		}, {
 			link: '/registration/fees',
 			text: 'Fees'
@@ -2209,6 +2208,231 @@ webpackJsonp([0],[
 	}(_preact.Component);
 
 	exports.default = AboutUs;
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	var _feesUtils = __webpack_require__(35);
+
+	__webpack_require__(36);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var RegistrationFees = function (_Component) {
+	    _inherits(RegistrationFees, _Component);
+
+	    function RegistrationFees() {
+	        _classCallCheck(this, RegistrationFees);
+
+	        return _possibleConstructorReturn(this, (RegistrationFees.__proto__ || Object.getPrototypeOf(RegistrationFees)).apply(this, arguments));
+	    }
+
+	    _createClass(RegistrationFees, [{
+	        key: 'render',
+	        value: function render() {
+	            return (0, _preact.h)(
+	                'div',
+	                { className: 'page page-regfees' },
+	                (0, _preact.h)(
+	                    'div',
+	                    { className: 'content-regfees' },
+	                    (0, _preact.h)(
+	                        'h2',
+	                        { className: 'typl8-delta' },
+	                        'Registration Fees'
+	                    ),
+	                    (0, _preact.h)(
+	                        'table',
+	                        { border: '1' },
+	                        (0, _preact.h)(
+	                            'thead',
+	                            null,
+	                            (0, _preact.h)(
+	                                'td',
+	                                null,
+	                                'CODE'
+	                            ),
+	                            (0, _preact.h)(
+	                                'td',
+	                                null,
+	                                'PARTICIPANTS'
+	                            ),
+	                            (0, _preact.h)(
+	                                'td',
+	                                null,
+	                                'CONFERENCE'
+	                            ),
+	                            (0, _preact.h)(
+	                                'td',
+	                                null,
+	                                'PRE-CONFERENCE WORKSHOP'
+	                            )
+	                        ),
+	                        (0, _preact.h)(
+	                            'tr',
+	                            null,
+	                            (0, _preact.h)('td', null),
+	                            (0, _preact.h)('td', null),
+	                            (0, _preact.h)(
+	                                'td',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'table',
+	                                    { style: 'width:100%' },
+	                                    (0, _preact.h)(
+	                                        'tr',
+	                                        null,
+	                                        (0, _preact.h)(
+	                                            'td',
+	                                            { className: 'cell' },
+	                                            'Early bird (till 20-1-2017)'
+	                                        ),
+	                                        (0, _preact.h)(
+	                                            'td',
+	                                            { className: 'cell' },
+	                                            'Till 20-2-2017'
+	                                        ),
+	                                        (0, _preact.h)(
+	                                            'td',
+	                                            { className: 'cell' },
+	                                            'On Spot'
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            (0, _preact.h)(
+	                                'td',
+	                                null,
+	                                'Registration open till 10 - 2 2017'
+	                            )
+	                        ),
+	                        _feesUtils.RegistrationFeesData.map(function (item) {
+	                            return (0, _preact.h)(
+	                                'tr',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'td',
+	                                    null,
+	                                    item.code
+	                                ),
+	                                (0, _preact.h)(
+	                                    'td',
+	                                    null,
+	                                    item.name
+	                                ),
+	                                (0, _preact.h)(
+	                                    'td',
+	                                    null,
+	                                    (0, _preact.h)(
+	                                        'table',
+	                                        { style: 'width:100%' },
+	                                        (0, _preact.h)(
+	                                            'tr',
+	                                            null,
+	                                            (0, _preact.h)(
+	                                                'td',
+	                                                { className: 'cell' },
+	                                                item.fees[0]
+	                                            ),
+	                                            (0, _preact.h)(
+	                                                'td',
+	                                                { className: 'cell' },
+	                                                item.fees[0]
+	                                            ),
+	                                            (0, _preact.h)(
+	                                                'td',
+	                                                { className: 'cell' },
+	                                                item.fees[0]
+	                                            )
+	                                        )
+	                                    )
+	                                ),
+	                                (0, _preact.h)(
+	                                    'td',
+	                                    null,
+	                                    item.preconffees
+	                                )
+	                            );
+	                        })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return RegistrationFees;
+	}(_preact.Component);
+
+	exports.default = RegistrationFees;
+
+/***/ },
+/* 35 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var RegistrationFeesData = [{
+	    code: 'A',
+	    name: 'PROFESSIONAL',
+	    fees: ['INR 4000/-', 'INR 5000/-', 'INR 6000/-'],
+	    preconffees: 'INR 3000/-'
+	}, {
+	    code: 'B',
+	    name: 'STUDENTS',
+	    fees: ['INR 1500/-', 'INR 2000/-', 'INR 2500/-'],
+	    preconffees: 'INR 1000/-'
+	}, {
+	    code: 'C',
+	    name: 'International Professionals',
+	    fees: ['USD 500/-', 'USD 600/-', 'USD 700/-'],
+	    preconffees: 'USD 200'
+	}, {
+	    code: 'D',
+	    name: 'International Students',
+	    fees: ['USD 200/-', 'USD 300/-', 'USD 400/-'],
+	    preconffees: 'USD 100'
+	}, {
+	    code: 'E',
+	    name: 'International Professional (LMIC)',
+	    fees: ['USD 300/-', 'USD 400/-', 'USD 500/-'],
+	    preconffees: 'USD 100'
+	}, {
+	    code: 'F',
+	    name: 'International Students (LMIC)',
+	    fees: ['USD 100/-', 'USD 200/-', 'USD 300/-'],
+	    preconffees: 'USD 50'
+	}, {
+	    code: 'F',
+	    name: 'Accompanying Person',
+	    fees: ['INR 1500/-, USD 100/-', 'INR 2000/-, USD 150/-', 'INR 2500/-, USD 200/-'],
+	    preconffees: 'N/A'
+	}];
+
+	exports.RegistrationFeesData = RegistrationFeesData;
+
+/***/ },
+/* 36 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);
