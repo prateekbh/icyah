@@ -28,13 +28,16 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/');
 
-app.use(bodyParser.json({limit: '2mb'}));
+app.use(bodyParser.json({limit: '4mb'}));
 
 app.use(cookieParser());
 app.use(compression());
 app.use(serveStatic(rootDir));
 
+app.get("/", serveSite);
 app.get("/awards", serveSite);
+app.get("/about/aboutiaah", serveSite);
+app.get("/registration/*", serveSite);
 app.get("/aboutus", serveSite);
 app.get("/fees", serveSite);
 app.get("/abstract", serveSite);

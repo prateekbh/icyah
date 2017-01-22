@@ -57,6 +57,10 @@ webpackJsonp([0],[
 
 	var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
+	var _AboutIaah = __webpack_require__(32);
+
+	var _AboutIaah2 = _interopRequireDefault(_AboutIaah);
+
 	var _Fees = __webpack_require__(17);
 
 	var _Fees2 = _interopRequireDefault(_Fees);
@@ -64,6 +68,10 @@ webpackJsonp([0],[
 	var _Abstract = __webpack_require__(20);
 
 	var _Abstract2 = _interopRequireDefault(_Abstract);
+
+	var _Cancellation = __webpack_require__(33);
+
+	var _Cancellation2 = _interopRequireDefault(_Cancellation);
 
 	__webpack_require__(26);
 
@@ -116,9 +124,11 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_Home2.default, { path: '/' }),
 	            (0, _preact.h)(_Sponsors2.default, { path: '/sponsors' }),
 	            (0, _preact.h)(_Awards2.default, { path: '/awards' }),
+	            (0, _preact.h)(_AboutIaah2.default, { path: '/about/iaah' }),
 	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' }),
 	            (0, _preact.h)(_Fees2.default, { path: '/fees' }),
-	            (0, _preact.h)(_Abstract2.default, { user: this.state.user, doneLogin: this.doneLogin.bind(this), path: '/abstract' })
+	            (0, _preact.h)(_Abstract2.default, { user: this.state.user, doneLogin: this.doneLogin.bind(this), path: '/abstract' }),
+	            (0, _preact.h)(_Cancellation2.default, { path: '/registration/cancellation' })
 	          )
 	        )
 	      );
@@ -504,13 +514,28 @@ webpackJsonp([0],[
 		text: 'HOME'
 	}, {
 		link: [{
-			link: 'about/iaah',
+			link: '/about/iaah',
 			text: 'IAAH'
 		}, {
-			link: 'about/icyah',
+			link: '/aboutus',
 			text: 'ICYAH'
 		}],
 		text: 'ABOUT'
+	}, {
+		link: [{
+			link: '/registration/cancellation',
+			text: 'Cancellation'
+		}, {
+			link: '/registration/privacypolicy',
+			text: 'Privacy Policy'
+		}, {
+			link: '/registration/tnc',
+			text: 'Terms'
+		}, {
+			link: '/registration/fees',
+			text: 'Fees'
+		}],
+		text: 'Registration'
 	}, {
 		link: 'awards',
 		text: 'AWARDS'
@@ -594,7 +619,11 @@ webpackJsonp([0],[
 								'4th - 6th April | Convention Center, NDMC, New Delhi'
 							)
 						),
-						(0, _preact.h)('div', { className: 'logo-iaah box' })
+						(0, _preact.h)(
+							'div',
+							{ className: 'logo-iaah box' },
+							(0, _preact.h)('img', { className: 'logo-iaah', src: '/images/iaahlogo.png', width: '162' })
+						)
 					),
 					(0, _preact.h)(
 						'div',
@@ -795,7 +824,7 @@ webpackJsonp([0],[
 								(0, _preact.h)(
 									'div',
 									null,
-									(0, _preact.h)('img', { className: 'pic-president', src: '/public/images/president.jpg', width: '100' })
+									(0, _preact.h)('img', { className: 'pic-president', src: '/images/president.jpg', width: '100' })
 								),
 								(0, _preact.h)(
 									'div',
@@ -1078,16 +1107,6 @@ webpackJsonp([0],[
 					(0, _preact.h)(
 						'div',
 						{ className: 'content-aboutus' },
-						(0, _preact.h)(
-							'h2',
-							{ className: 'typl8-gamma' },
-							'Indian Association for Adolescent Health'
-						),
-						(0, _preact.h)(
-							'p',
-							null,
-							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
-						),
 						(0, _preact.h)(
 							'h2',
 							{ className: 'head typl8-delta' },
@@ -1880,7 +1899,7 @@ webpackJsonp([0],[
 	                }),
 	                credentials: 'include',
 	                body: JSON.stringify({
-	                    username: this.reguname.value,
+	                    username: this.regemail.value,
 	                    password: this.regpwd.value,
 	                    name: this.regname.value,
 	                    email: this.regemail.value,
@@ -1943,7 +1962,7 @@ webpackJsonp([0],[
 	                            null,
 	                            (0, _preact.h)('input', { className: 'typl8-zeta username', ref: function ref(e) {
 	                                    return _this4.uname = e;
-	                                }, placeholder: 'username' })
+	                                }, type: 'email', placeholder: 'emailid' })
 	                        ),
 	                        (0, _preact.h)(
 	                            'div',
@@ -1968,9 +1987,9 @@ webpackJsonp([0],[
 	                        (0, _preact.h)(
 	                            'div',
 	                            null,
-	                            (0, _preact.h)('input', { className: 'typl8-zeta username', ref: function ref(e) {
-	                                    return _this4.reguname = e;
-	                                }, placeholder: 'username' })
+	                            (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
+	                                    return _this4.regemail = e;
+	                                }, type: 'email', placeholder: 'email id' })
 	                        ),
 	                        (0, _preact.h)(
 	                            'div',
@@ -1985,13 +2004,6 @@ webpackJsonp([0],[
 	                            (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
 	                                    return _this4.regname = e;
 	                                }, placeholder: 'full name' })
-	                        ),
-	                        (0, _preact.h)(
-	                            'div',
-	                            null,
-	                            (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
-	                                    return _this4.regemail = e;
-	                                }, type: 'email', placeholder: 'email id' })
 	                        ),
 	                        (0, _preact.h)(
 	                            'div',
@@ -2046,6 +2058,157 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 31 */,
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AboutUs = function (_Component) {
+		_inherits(AboutUs, _Component);
+
+		function AboutUs() {
+			_classCallCheck(this, AboutUs);
+
+			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
+		}
+
+		_createClass(AboutUs, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-aboutus' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-aboutus' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-gamma' },
+							'Indian Association for Adolescent Health'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
+						)
+					)
+				);
+			}
+		}]);
+
+		return AboutUs;
+	}(_preact.Component);
+
+	exports.default = AboutUs;
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AboutUs = function (_Component) {
+		_inherits(AboutUs, _Component);
+
+		function AboutUs() {
+			_classCallCheck(this, AboutUs);
+
+			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
+		}
+
+		_createClass(AboutUs, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-cancellation' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-cancellations' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-delta' },
+							'Cancellation Policy'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							(0, _preact.h)(
+								'div',
+								null,
+								'The registered delegate be aware of that all registration and accommodation fees (if applicable) must be paid in full before attending the conference.'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'Any amendments and/or cancellations must be notified in writing to the Conference Organisers via email secretariat@conferenceoeh.com'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'Cancellations received in writing before July 31 2016 will be credited back to the registered delegate in full less 33% of the fee paid.'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'50% of the registration amount will be credited back to the registered delegate on cancellations received in writing between August 1 - 31, 2016 .'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'No refunds will be provided after this date.'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'Kindly note that the refund money will be credited back to the payee account after the event is over and latest by October 31, 2016 .'
+							),
+							(0, _preact.h)(
+								'div',
+								null,
+								'Substitute delegates are welcome without any penalty. Please advise the Conference Organisers by email of any name changes as soon as possible at secretariat@conferenceoeh.com'
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return AboutUs;
+	}(_preact.Component);
+
+	exports.default = AboutUs;
 
 /***/ }
 ]);

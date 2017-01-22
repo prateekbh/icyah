@@ -9,15 +9,36 @@ const links=[
 	{
 		link:[
 			{
-				link:'about/iaah',
+				link:'/about/iaah',
 				text: 'IAAH'
 			},
 			{
-				link:'about/icyah',
+				link:'/aboutus',
 				text: 'ICYAH'
 			}
 		],
 		text: 'ABOUT'
+	},
+	{
+		link:[
+			{
+				link:'/registration/cancellation',
+				text: 'Cancellation'
+			},
+			{
+				link:'/registration/privacypolicy',
+				text: 'Privacy Policy'
+			},
+			{
+				link:'/registration/tnc',
+				text: 'Terms'
+			},
+			{
+				link:'/registration/fees',
+				text: 'Fees'
+			},
+		],
+		text: 'Registration'
 	},
 	{
 		link:'awards',
@@ -71,6 +92,7 @@ export default class Header extends Component{
 						<div className='details'>4th - 6th April | Convention Center, NDMC, New Delhi</div>
 					</div>
 					<div className='logo-iaah box'>
+						<img className='logo-iaah' src='/images/iaahlogo.png' width="162"/>
 					</div>
 				</div>
 				<div className='nav-container'>

@@ -41,7 +41,7 @@ export default class Fees extends Component {
             }),
             credentials: 'include',
             body:JSON.stringify({
-                username: this.reguname.value,
+                username: this.regemail.value,
                 password: this.regpwd.value,
                 name: this.regname.value,
                 email: this.regemail.value,
@@ -89,7 +89,7 @@ export default class Fees extends Component {
                         this.state.tab === 'LOGIN' &&  
                         <div className='controls'>
                             <div>
-                                <input className='typl8-zeta username' ref={e=>this.uname=e} placeholder='username'/>
+                                <input className='typl8-zeta username' ref={e=>this.uname=e} type='email' placeholder='emailid'/>
                             </div>
                             <div>
                                 <input className='typl8-zeta password' type='password' ref={e=>this.pwd=e} placeholder='password'/>
@@ -103,16 +103,13 @@ export default class Fees extends Component {
                         this.state.tab === 'SIGNUP' &&  
                         <div className='controls'>
                             <div>
-                                <input className='typl8-zeta username' ref={e=>this.reguname=e} placeholder='username'/>
+                                <input className='typl8-zeta ' ref={e=>this.regemail=e} type='email' placeholder='email id'/>
                             </div>
                             <div>
                                 <input className='typl8-zeta password' type='password' ref={e=>this.regpwd=e} placeholder='password'/>
                             </div>
                             <div>
                                 <input className='typl8-zeta ' ref={e=>this.regname=e} placeholder='full name'/>
-                            </div>
-                            <div>
-                                <input className='typl8-zeta ' ref={e=>this.regemail=e} type='email' placeholder='email id'/>
                             </div>
                             <div>
                                 <input className='typl8-zeta ' ref={e=>this.regphone=e} maxLength='10' placeholder='phonenumber'/>

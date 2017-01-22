@@ -1,7 +1,11 @@
 const UserManagement = require('user-management');
 
 function initUsers(cb){
-	const users = new UserManagement({database: 'icyah'});
+	const users = new UserManagement({
+		hostname: process.env.MONGO_SERVER || 'localhost',
+		port: process.env.MONGO_PORT || 27017,
+		database: process.env.MONGO_DB || 'icyah',
+	});
 	users.load(function(err) {
 		if(err){
 			console.log('CANNOT LOAD USERS')
@@ -42,7 +46,9 @@ function getUserFromToken(token) {
 				if (err) {
 					reject(err);
 				} else {
-					extras.token = token;
+					if (extras) {
+						extras.token = token;
+					}
 					resolve(extras);
 				}
 			});

@@ -65,7 +65,7 @@ export default class Home extends Component {
 						<div className='from'>Looking forward to welcoming you in Delhi, India.</div>
 						<div>With warm regards</div>
 						<div>
-							<img className='pic-president' src='/public/images/president.jpg' width='100'/>
+							<img className='pic-president' src='/images/president.jpg' width='100'/>
 						</div>
 						<div>Dr. Prema Bali,</div>
 						<div>Founding President, IAAH​</div>
