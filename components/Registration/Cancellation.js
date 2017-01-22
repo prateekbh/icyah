@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
 
-export default class AboutUs extends Component {
+export default class Cancellation extends Component {
  render(){
 	 return (
 		 <div className='page page-cancellation'>

@@ -10,8 +10,10 @@ import Fees from './components/Fees/Fees';
 import Abstract from './components/Abstract/Abstract';
 import Cancellations from './components/Registration/Cancellation';
 import RegistrationFees from './components/Registration/RegistrationFees';
+import Register from './components/Registration/Register';
 import './type.css';
 import './App.css';
+
 export default class App extends Component {
   componentDidMount(){
     this.setState({
@@ -38,6 +40,7 @@ export default class App extends Component {
             <Abstract user={this.state.user} doneLogin={this.doneLogin.bind(this)} path="/abstract" />
             <Cancellations path='/registration/cancellation' />
             <RegistrationFees path='/registration/fees' />
+            <Register user={this.state.user} path='/registration/register' />
           </Router>
         </div>
       </div>

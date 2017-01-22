@@ -10,7 +10,7 @@ webpackJsonp([0],[
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(30);
+	__webpack_require__(37);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57,29 +57,33 @@ webpackJsonp([0],[
 
 	var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
-	var _AboutIaah = __webpack_require__(32);
+	var _AboutIaah = __webpack_require__(17);
 
 	var _AboutIaah2 = _interopRequireDefault(_AboutIaah);
 
-	var _Fees = __webpack_require__(17);
+	var _Fees = __webpack_require__(18);
 
 	var _Fees2 = _interopRequireDefault(_Fees);
 
-	var _Abstract = __webpack_require__(20);
+	var _Abstract = __webpack_require__(21);
 
 	var _Abstract2 = _interopRequireDefault(_Abstract);
 
-	var _Cancellation = __webpack_require__(33);
+	var _Cancellation = __webpack_require__(27);
 
 	var _Cancellation2 = _interopRequireDefault(_Cancellation);
 
-	var _RegistrationFees = __webpack_require__(34);
+	var _RegistrationFees = __webpack_require__(28);
 
 	var _RegistrationFees2 = _interopRequireDefault(_RegistrationFees);
 
-	__webpack_require__(26);
+	var _Register = __webpack_require__(32);
 
-	__webpack_require__(28);
+	var _Register2 = _interopRequireDefault(_Register);
+
+	__webpack_require__(33);
+
+	__webpack_require__(35);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -133,7 +137,8 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_Fees2.default, { path: '/fees' }),
 	            (0, _preact.h)(_Abstract2.default, { user: this.state.user, doneLogin: this.doneLogin.bind(this), path: '/abstract' }),
 	            (0, _preact.h)(_Cancellation2.default, { path: '/registration/cancellation' }),
-	            (0, _preact.h)(_RegistrationFees2.default, { path: '/registration/fees' })
+	            (0, _preact.h)(_RegistrationFees2.default, { path: '/registration/fees' }),
+	            (0, _preact.h)(_Register2.default, { user: this.state.user, path: '/registration/register' })
 	          )
 	        )
 	      );
@@ -1213,7 +1218,65 @@ webpackJsonp([0],[
 
 	var _preact = __webpack_require__(1);
 
-	__webpack_require__(18);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AboutUs = function (_Component) {
+		_inherits(AboutUs, _Component);
+
+		function AboutUs() {
+			_classCallCheck(this, AboutUs);
+
+			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
+		}
+
+		_createClass(AboutUs, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-aboutus' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-aboutus' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-gamma' },
+							'Indian Association for Adolescent Health'
+						),
+						(0, _preact.h)(
+							'p',
+							null,
+							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
+						)
+					)
+				);
+			}
+		}]);
+
+		return AboutUs;
+	}(_preact.Component);
+
+	exports.default = AboutUs;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	__webpack_require__(19);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1573,14 +1636,14 @@ webpackJsonp([0],[
 	exports.default = Fees;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 19 */,
-/* 20 */
+/* 20 */,
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1593,9 +1656,9 @@ webpackJsonp([0],[
 
 	var _preact = __webpack_require__(1);
 
-	__webpack_require__(21);
+	__webpack_require__(22);
 
-	var _LoginSignup = __webpack_require__(23);
+	var _LoginSignup = __webpack_require__(24);
 
 	var _LoginSignup2 = _interopRequireDefault(_LoginSignup);
 
@@ -1817,14 +1880,14 @@ webpackJsonp([0],[
 	exports.default = Abstract;
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1837,7 +1900,7 @@ webpackJsonp([0],[
 
 	var _preact = __webpack_require__(1);
 
-	__webpack_require__(24);
+	__webpack_require__(25);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2032,35 +2095,14 @@ webpackJsonp([0],[
 	exports.default = Fees;
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 25 */,
-/* 26 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 27 */,
-/* 28 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 29 */,
-/* 30 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 31 */,
-/* 32 */
+/* 26 */,
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2079,74 +2121,16 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var AboutUs = function (_Component) {
-		_inherits(AboutUs, _Component);
+	var Cancellation = function (_Component) {
+		_inherits(Cancellation, _Component);
 
-		function AboutUs() {
-			_classCallCheck(this, AboutUs);
+		function Cancellation() {
+			_classCallCheck(this, Cancellation);
 
-			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (Cancellation.__proto__ || Object.getPrototypeOf(Cancellation)).apply(this, arguments));
 		}
 
-		_createClass(AboutUs, [{
-			key: 'render',
-			value: function render() {
-				return (0, _preact.h)(
-					'div',
-					{ className: 'page page-aboutus' },
-					(0, _preact.h)(
-						'div',
-						{ className: 'content-aboutus' },
-						(0, _preact.h)(
-							'h2',
-							{ className: 'typl8-gamma' },
-							'Indian Association for Adolescent Health'
-						),
-						(0, _preact.h)(
-							'p',
-							null,
-							'It is a Non-Governmental National Organization of professionals who share the interest in the programs and activities to meet the health care needs of young people all over the country. The goal of the organization is to foster development of regional and state-level associations for promotion of youth and adolescent health. IAAH ensures meaningful youth participation in all its programs and activities. IAAH realizes its role as enhancer of the health of adolescents and youth through education, research and high quality health care. IAAH maintains a multi-disciplinary composition of its members.'
-						)
-					)
-				);
-			}
-		}]);
-
-		return AboutUs;
-	}(_preact.Component);
-
-	exports.default = AboutUs;
-
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _preact = __webpack_require__(1);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var AboutUs = function (_Component) {
-		_inherits(AboutUs, _Component);
-
-		function AboutUs() {
-			_classCallCheck(this, AboutUs);
-
-			return _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).apply(this, arguments));
-		}
-
-		_createClass(AboutUs, [{
+		_createClass(Cancellation, [{
 			key: 'render',
 			value: function render() {
 				return (0, _preact.h)(
@@ -2204,13 +2188,13 @@ webpackJsonp([0],[
 			}
 		}]);
 
-		return AboutUs;
+		return Cancellation;
 	}(_preact.Component);
 
-	exports.default = AboutUs;
+	exports.default = Cancellation;
 
 /***/ },
-/* 34 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2223,9 +2207,9 @@ webpackJsonp([0],[
 
 	var _preact = __webpack_require__(1);
 
-	var _feesUtils = __webpack_require__(35);
+	var _feesUtils = __webpack_require__(29);
 
-	__webpack_require__(36);
+	__webpack_require__(30);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2381,7 +2365,7 @@ webpackJsonp([0],[
 	exports.default = RegistrationFees;
 
 /***/ },
-/* 35 */
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2429,7 +2413,82 @@ webpackJsonp([0],[
 	exports.RegistrationFeesData = RegistrationFeesData;
 
 /***/ },
-/* 36 */
+/* 30 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 31 */,
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Register = function (_Component) {
+		_inherits(Register, _Component);
+
+		function Register() {
+			_classCallCheck(this, Register);
+
+			return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+		}
+
+		_createClass(Register, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-register' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-register' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-delta' },
+							'Start Registering'
+						),
+						(0, _preact.h)('p', null)
+					)
+				);
+			}
+		}]);
+
+		return Register;
+	}(_preact.Component);
+
+	exports.default = Register;
+
+/***/ },
+/* 33 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 34 */,
+/* 35 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 36 */,
+/* 37 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
