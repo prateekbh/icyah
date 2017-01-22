@@ -10,7 +10,7 @@ webpackJsonp([0],[
 
 	var _App2 = _interopRequireDefault(_App);
 
-	__webpack_require__(37);
+	__webpack_require__(39);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81,9 +81,9 @@ webpackJsonp([0],[
 
 	var _Register2 = _interopRequireDefault(_Register);
 
-	__webpack_require__(33);
-
 	__webpack_require__(35);
+
+	__webpack_require__(37);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -117,6 +117,20 @@ webpackJsonp([0],[
 	      });
 	    }
 	  }, {
+	    key: 'doneRegistration',
+	    value: function doneRegistration(data) {
+	      this.setState({
+	        user: data
+	      });
+	    }
+	  }, {
+	    key: 'paymentDone',
+	    value: function paymentDone(data) {
+	      this.setState({
+	        user: data
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return (0, _preact.h)(
@@ -135,10 +149,17 @@ webpackJsonp([0],[
 	            (0, _preact.h)(_AboutIaah2.default, { path: '/about/iaah' }),
 	            (0, _preact.h)(_AboutUs2.default, { path: '/aboutus' }),
 	            (0, _preact.h)(_Fees2.default, { path: '/fees' }),
-	            (0, _preact.h)(_Abstract2.default, { user: this.state.user, doneLogin: this.doneLogin.bind(this), path: '/abstract' }),
+	            (0, _preact.h)(_Abstract2.default, { user: this.state.user,
+	              doneLogin: this.doneLogin.bind(this),
+	              path: '/abstract' }),
 	            (0, _preact.h)(_Cancellation2.default, { path: '/registration/cancellation' }),
 	            (0, _preact.h)(_RegistrationFees2.default, { path: '/registration/fees' }),
-	            (0, _preact.h)(_Register2.default, { user: this.state.user, path: '/registration/register' })
+	            (0, _preact.h)(_Register2.default, {
+	              user: this.state.user,
+	              doneLogin: this.doneLogin.bind(this),
+	              doneRegistration: this.doneRegistration.bind(this),
+	              paymentDone: this.paymentDone.bind(this),
+	              path: '/registration/register' })
 	          )
 	        )
 	      );
@@ -1908,13 +1929,13 @@ webpackJsonp([0],[
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Fees = function (_Component) {
-	    _inherits(Fees, _Component);
+	var LoginSignup = function (_Component) {
+	    _inherits(LoginSignup, _Component);
 
-	    function Fees() {
-	        _classCallCheck(this, Fees);
+	    function LoginSignup() {
+	        _classCallCheck(this, LoginSignup);
 
-	        var _this = _possibleConstructorReturn(this, (Fees.__proto__ || Object.getPrototypeOf(Fees)).call(this));
+	        var _this = _possibleConstructorReturn(this, (LoginSignup.__proto__ || Object.getPrototypeOf(LoginSignup)).call(this));
 
 	        _this.state = {
 	            tab: 'LOGIN'
@@ -1922,7 +1943,7 @@ webpackJsonp([0],[
 	        return _this;
 	    }
 
-	    _createClass(Fees, [{
+	    _createClass(LoginSignup, [{
 	        key: 'login',
 	        value: function login() {
 	            var _this2 = this;
@@ -2089,10 +2110,10 @@ webpackJsonp([0],[
 	        }
 	    }]);
 
-	    return Fees;
+	    return LoginSignup;
 	}(_preact.Component);
 
-	exports.default = Fees;
+	exports.default = LoginSignup;
 
 /***/ },
 /* 25 */
@@ -2331,17 +2352,26 @@ webpackJsonp([0],[
 	                                            (0, _preact.h)(
 	                                                'td',
 	                                                { className: 'cell' },
-	                                                item.fees[0]
+	                                                item.currency,
+	                                                ' ',
+	                                                item.fees[0],
+	                                                '/-'
 	                                            ),
 	                                            (0, _preact.h)(
 	                                                'td',
 	                                                { className: 'cell' },
-	                                                item.fees[0]
+	                                                item.currency,
+	                                                ' ',
+	                                                item.fees[1],
+	                                                '/-'
 	                                            ),
 	                                            (0, _preact.h)(
 	                                                'td',
 	                                                { className: 'cell' },
-	                                                item.fees[0]
+	                                                item.currency,
+	                                                ' ',
+	                                                item.fees[2],
+	                                                '/-'
 	                                            )
 	                                        )
 	                                    )
@@ -2349,7 +2379,10 @@ webpackJsonp([0],[
 	                                (0, _preact.h)(
 	                                    'td',
 	                                    null,
-	                                    item.preconffees
+	                                    item.currency,
+	                                    ' ',
+	                                    item.preconffees,
+	                                    '/-'
 	                                )
 	                            );
 	                        })
@@ -2375,42 +2408,56 @@ webpackJsonp([0],[
 	});
 	var RegistrationFeesData = [{
 	    code: 'A',
+	    currency: 'INR',
 	    name: 'PROFESSIONAL',
-	    fees: ['INR 4000/-', 'INR 5000/-', 'INR 6000/-'],
-	    preconffees: 'INR 3000/-'
+	    fees: ['4000', '5000', '6000'],
+	    preconffees: '3000'
 	}, {
 	    code: 'B',
+	    currency: 'INR',
 	    name: 'STUDENTS',
-	    fees: ['INR 1500/-', 'INR 2000/-', 'INR 2500/-'],
-	    preconffees: 'INR 1000/-'
+	    fees: ['1500', '2000', '2500'],
+	    preconffees: '1000'
 	}, {
 	    code: 'C',
+	    currency: 'USD',
 	    name: 'International Professionals',
-	    fees: ['USD 500/-', 'USD 600/-', 'USD 700/-'],
-	    preconffees: 'USD 200'
+	    fees: ['500', '600', '700'],
+	    preconffees: '200'
 	}, {
 	    code: 'D',
+	    currency: 'USD',
 	    name: 'International Students',
-	    fees: ['USD 200/-', 'USD 300/-', 'USD 400/-'],
-	    preconffees: 'USD 100'
+	    fees: ['200', '300', '400'],
+	    preconffees: '100'
 	}, {
 	    code: 'E',
+	    currency: 'USD',
 	    name: 'International Professional (LMIC)',
-	    fees: ['USD 300/-', 'USD 400/-', 'USD 500/-'],
-	    preconffees: 'USD 100'
+	    fees: ['300', '400', '500'],
+	    preconffees: '100'
 	}, {
 	    code: 'F',
+	    currency: 'USD',
 	    name: 'International Students (LMIC)',
-	    fees: ['USD 100/-', 'USD 200/-', 'USD 300/-'],
-	    preconffees: 'USD 50'
-	}, {
-	    code: 'F',
-	    name: 'Accompanying Person',
-	    fees: ['INR 1500/-, USD 100/-', 'INR 2000/-, USD 150/-', 'INR 2500/-, USD 200/-'],
-	    preconffees: 'N/A'
+	    fees: ['100', '200', '300'],
+	    preconffees: '50'
 	}];
 
+	function calcFees(occupation, attendingConf, attendingWorkshop) {
+	    var fees = 0;
+	    RegistrationFeesData.forEach(function (e) {
+	        if (e.name === occupation) {
+	            attendingConf && e.currency === 'INR' && (fees += e.fees[0]);
+	            attendingConf && e.currency === 'USD' && (fees += e.fees[0] * 67);
+	            attendingWorkshop && Number.isInteger(e.preconffees) && (fees += e.preconffees);
+	        }
+	    });
+	    return parseInt(fees);
+	}
+
 	exports.RegistrationFeesData = RegistrationFeesData;
+	exports.calcFees = calcFees;
 
 /***/ },
 /* 30 */
@@ -2426,12 +2473,22 @@ webpackJsonp([0],[
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _preact = __webpack_require__(1);
+
+	var _LoginSignup = __webpack_require__(24);
+
+	var _LoginSignup2 = _interopRequireDefault(_LoginSignup);
+
+	var _feesUtils = __webpack_require__(29);
+
+	__webpack_require__(33);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2440,35 +2497,264 @@ webpackJsonp([0],[
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Register = function (_Component) {
-		_inherits(Register, _Component);
+	    _inherits(Register, _Component);
 
-		function Register() {
-			_classCallCheck(this, Register);
+	    function Register() {
+	        _classCallCheck(this, Register);
 
-			return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
-		}
+	        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+	    }
 
-		_createClass(Register, [{
-			key: 'render',
-			value: function render() {
-				return (0, _preact.h)(
-					'div',
-					{ className: 'page page-register' },
-					(0, _preact.h)(
-						'div',
-						{ className: 'content-register' },
-						(0, _preact.h)(
-							'h2',
-							{ className: 'typl8-delta' },
-							'Start Registering'
-						),
-						(0, _preact.h)('p', null)
-					)
-				);
-			}
-		}]);
+	    _createClass(Register, [{
+	        key: 'register',
+	        value: function register() {
+	            var _this2 = this;
 
-		return Register;
+	            fetch('/user/register', {
+	                method: 'POST',
+	                headers: new Headers({
+	                    'content-type': 'application/json'
+	                }),
+	                credentials: 'include',
+	                body: JSON.stringify({
+	                    name: this.regname.value,
+	                    phone: this.regphone.value,
+	                    attendingConf: this.regconf.checked,
+	                    attendingWorkshop: this.regworkshop.checked,
+	                    occupation: this.regoccupation.value
+	                })
+	            }).then(function (res) {
+	                if (res.ok) {
+	                    return res.json();
+	                } else {
+	                    throw new Error('');
+	                }
+	            }).then(function (res) {
+	                _this2.props.doneRegistration && _this2.props.doneRegistration(res);
+	            }).catch(function (e) {
+	                alert('Cannot Register, please try again after sometime.');
+	            });
+	        }
+	    }, {
+	        key: 'pay',
+	        value: function pay() {
+	            var _this3 = this;
+
+	            var amount = (0, _feesUtils.calcFees)(this.props.user.occupation, this.props.user.registeredForConf, this.props.user.registeredForWorkshop) * 100;
+	            var desc = 'Registration fees for: ';
+	            if (this.props.user.attendingConf) {
+	                desc += "Attending conference, ";
+	            }
+	            if (this.props.user.attendingWorkshop) {
+	                desc += "Attending workshop, ";
+	            }
+	            var options = {
+	                "key": "rzp_test_TrPU5mYt8jVAkR",
+	                amount: amount,
+	                "name": "ICYAAH",
+	                "description": desc,
+	                "image": "/images/logo.png",
+	                "handler": function handler(response) {
+	                    _this3.sendPayment(response.razorpay_payment_id, amount);
+	                },
+	                "prefill": {
+	                    "name": this.props.user.name,
+	                    "email": this.props.user.email,
+	                    "phone": this.props.user.phone
+	                }
+	            };
+	            var rzp = new Razorpay(options);
+	            rzp.open();
+	        }
+	    }, {
+	        key: 'sendPayment',
+	        value: function sendPayment(payment_id, amount) {
+	            var _this4 = this;
+
+	            fetch('/user/pay', {
+	                method: 'POST',
+	                headers: new Headers({
+	                    'content-type': 'application/json'
+	                }),
+	                credentials: 'include',
+	                body: JSON.stringify({
+	                    payment_id: payment_id,
+	                    amount: amount
+	                })
+	            }).then(function (res) {
+	                if (res.ok) {
+	                    return res.json();
+	                } else {
+	                    throw new Error('');
+	                }
+	            }).then(function (res) {
+	                _this4.props.paymentDone && _this4.props.paymentDone(res);
+	            }).catch(function (e) {
+	                alert('Payment failed.');
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this5 = this;
+
+	            return (0, _preact.h)(
+	                'div',
+	                { className: 'page page-register' },
+	                (0, _preact.h)(
+	                    'div',
+	                    { className: 'content-register' },
+	                    (0, _preact.h)(
+	                        'h2',
+	                        { className: 'typl8-delta' },
+	                        'Start Registering'
+	                    ),
+	                    (0, _preact.h)(
+	                        'p',
+	                        null,
+	                        this.props.user && this.props.user.email ? (0, _preact.h)(
+	                            'div',
+	                            { className: 'registration' },
+	                            this.props.user.registrationDone ? (0, _preact.h)(
+	                                'div',
+	                                { className: 'msg' },
+	                                this.props.user.paymentDone ? (0, _preact.h)(
+	                                    'div',
+	                                    { className: 'complete' },
+	                                    (0, _preact.h)(
+	                                        'div',
+	                                        null,
+	                                        'Congrats your payment is done with id: ',
+	                                        this.props.user.payment_id
+	                                    )
+	                                ) : (0, _preact.h)(
+	                                    'div',
+	                                    { className: 'payment-step' },
+	                                    (0, _preact.h)(
+	                                        'div',
+	                                        null,
+	                                        (0, _preact.h)(
+	                                            'label',
+	                                            null,
+	                                            (0, _preact.h)('input', { ref: function ref(e) {
+	                                                    return _this5.regconf = e;
+	                                                }, type: 'checkbox', disabled: true, checked: this.props.user.registeredForConf || true }),
+	                                            'Attending Conference'
+	                                        )
+	                                    ),
+	                                    (0, _preact.h)(
+	                                        'div',
+	                                        null,
+	                                        (0, _preact.h)(
+	                                            'label',
+	                                            null,
+	                                            (0, _preact.h)('input', { ref: function ref(e) {
+	                                                    return _this5.regworkshop = e;
+	                                                }, type: 'checkbox', disabled: true, checked: this.props.user.registeredForWorkshop || false }),
+	                                            'Attending Pre-Conference Workshop'
+	                                        )
+	                                    ),
+	                                    (0, _preact.h)(
+	                                        'div',
+	                                        null,
+	                                        (0, _preact.h)(
+	                                            'button',
+	                                            { onClick: this.pay.bind(this) },
+	                                            'PAY ',
+	                                            (0, _feesUtils.calcFees)(this.props.user.occupation, this.props.user.registeredForConf, this.props.user.registeredForWorkshop)
+	                                        )
+	                                    )
+	                                )
+	                            ) : (0, _preact.h)(
+	                                'div',
+	                                { className: 'regForm' },
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
+	                                            return _this5.regname = e;
+	                                        }, placeholder: 'full name', value: this.props.user.name })
+	                                ),
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)('input', { className: 'typl8-zeta ', ref: function ref(e) {
+	                                            return _this5.regphone = e;
+	                                        }, maxLength: '10', placeholder: 'phonenumber', value: this.props.user.phone })
+	                                ),
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)(
+	                                        'label',
+	                                        null,
+	                                        (0, _preact.h)('input', { ref: function ref(e) {
+	                                                return _this5.regconf = e;
+	                                            }, type: 'checkbox', maxLength: '10', checked: this.props.user.registeredForConf || true }),
+	                                        'Attending Conference'
+	                                    )
+	                                ),
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)(
+	                                        'label',
+	                                        null,
+	                                        (0, _preact.h)('input', { ref: function ref(e) {
+	                                                return _this5.regworkshop = e;
+	                                            }, type: 'checkbox', maxLength: '10', checked: this.props.user.registeredForWorkshop || false }),
+	                                        'Attending Pre-Conference Workshop'
+	                                    )
+	                                ),
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)(
+	                                        'label',
+	                                        null,
+	                                        'Select occupation'
+	                                    ),
+	                                    (0, _preact.h)(
+	                                        'select',
+	                                        { ref: function ref(e) {
+	                                                return _this5.regoccupation = e;
+	                                            } },
+	                                        _feesUtils.RegistrationFeesData.map(function (e) {
+	                                            return (0, _preact.h)(
+	                                                'option',
+	                                                null,
+	                                                e.name
+	                                            );
+	                                        })
+	                                    )
+	                                ),
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    { className: 'note' },
+	                                    '*LMIC: Lower middle income coutry'
+	                                ),
+	                                (0, _preact.h)(
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)(
+	                                        'button',
+	                                        { onClick: this.register.bind(this) },
+	                                        'Register'
+	                                    )
+	                                )
+	                            )
+	                        ) : (0, _preact.h)(
+	                            'div',
+	                            { className: 'login' },
+	                            (0, _preact.h)(_LoginSignup2.default, this.props)
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Register;
 	}(_preact.Component);
 
 	exports.default = Register;
@@ -2489,6 +2775,13 @@ webpackJsonp([0],[
 /***/ },
 /* 36 */,
 /* 37 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 38 */,
+/* 39 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

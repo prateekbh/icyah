@@ -1,48 +1,61 @@
 const RegistrationFeesData = [
     {
         code: 'A',
+        currency: 'INR',
         name: 'PROFESSIONAL',
-        fees: ['INR 4000/-','INR 5000/-','INR 6000/-'],
-        preconffees: 'INR 3000/-',
+        fees: ['4000','5000','6000'],
+        preconffees: '3000',
     },
     {
         code: 'B',
+        currency: 'INR',
         name: 'STUDENTS',
-        fees: ['INR 1500/-','INR 2000/-','INR 2500/-'],
-        preconffees: 'INR 1000/-',
+        fees: ['1500','2000','2500'],
+        preconffees: '1000',
     },
     {
         code: 'C',
+        currency: 'USD',
         name: 'International Professionals',
-        fees: ['USD 500/-','USD 600/-','USD 700/-'],
-        preconffees: 'USD 200',
+        fees: ['500','600','700'],
+        preconffees: '200',
     },
     {
         code: 'D',
+        currency: 'USD',
         name: 'International Students',
-        fees: ['USD 200/-','USD 300/-','USD 400/-'],
-        preconffees: 'USD 100',
+        fees: ['200','300','400'],
+        preconffees: '100',
     },
     {
         code: 'E',
+        currency: 'USD',
         name: 'International Professional (LMIC)',
-        fees: ['USD 300/-','USD 400/-','USD 500/-'],
-        preconffees: 'USD 100',
+        fees: ['300','400','500'],
+        preconffees: '100',
     },
     {
         code: 'F',
+        currency: 'USD',
         name: 'International Students (LMIC)',
-        fees: ['USD 100/-','USD 200/-','USD 300/-'],
-        preconffees: 'USD 50',
-    },
-    {
-        code: 'F',
-        name: 'Accompanying Person',
-        fees: ['INR 1500/-, USD 100/-','INR 2000/-, USD 150/-','INR 2500/-, USD 200/-'],
-        preconffees: 'N/A',
+        fees: ['100','200','300'],
+        preconffees: '50',
     },
 ];
 
+function calcFees(occupation, attendingConf, attendingWorkshop){
+    let fees = 0;
+    RegistrationFeesData.forEach(e=>{
+        if (e.name === occupation) {
+            attendingConf && e.currency ==='INR' && (fees += e.fees[0]);
+            attendingConf && e.currency ==='USD' && (fees += e.fees[0] * 67);
+            attendingWorkshop && Number.isInteger(e.preconffees) &&(fees += e.preconffees);
+        }
+    });
+    return parseInt(fees);
+}
+
 export {
     RegistrationFeesData,
+    calcFees,
 }

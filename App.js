@@ -20,7 +20,17 @@ export default class App extends Component {
       user: this.props.user,
     });
   }
-  doneLogin(data){
+  doneLogin(data) {
+    this.setState({
+      user: data,
+    });
+  }
+  doneRegistration(data) {
+    this.setState({
+      user: data,
+    });
+  }
+  paymentDone(data) {
     this.setState({
       user: data,
     });
@@ -37,10 +47,17 @@ export default class App extends Component {
             <AboutIaah path="/about/iaah"/>
             <AboutUs path="/aboutus"/>
             <Fees path="/fees"/>
-            <Abstract user={this.state.user} doneLogin={this.doneLogin.bind(this)} path="/abstract" />
+            <Abstract user={this.state.user} 
+              doneLogin={this.doneLogin.bind(this)}  
+              path="/abstract" />
             <Cancellations path='/registration/cancellation' />
             <RegistrationFees path='/registration/fees' />
-            <Register user={this.state.user} path='/registration/register' />
+            <Register 
+              user={this.state.user} 
+              doneLogin={this.doneLogin.bind(this)}
+              doneRegistration={this.doneRegistration.bind(this)}
+              paymentDone={this.paymentDone.bind(this)}
+              path='/registration/register' />
           </Router>
         </div>
       </div>

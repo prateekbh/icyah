@@ -3,17 +3,6 @@
 		display: inline-block;
 		width: 200px;
 	}
-	.submit, button{
-		border:0px;
-		color: #fff;
-		padding: 8px 16px;
-		min-width: 150px;
-		font-size: 20px;
-		border-radius: 3px;
-		margin: 8px auto;
-		background-color: #009688;
-		outline: 0px;
-	}
 	.icon-success{
 		vertical-align: middle;
 		margin-right: 15px;
@@ -29,5 +18,17 @@ input.typl8-zeta{
 	border : 0px solid #00aaee;
 	margin-top: 16px;
 	border-bottom-width: 1px;
+	outline: 0px;
+}
+
+.submit, button{
+	border:0px;
+	color: #fff;
+	padding: 8px 16px;
+	min-width: 150px;
+	font-size: 20px;
+	border-radius: 3px;
+	margin: 8px auto;
+	background-color: #009688;
 	outline: 0px;
 }

@@ -25,6 +25,7 @@
     "preact-compat": "^3.9.4",
     "preact-router": "^2.0.0",
     "precss": "^1.4.0",
+    "razorpay": "^1.2.1",
     "serve-static": "^1.11.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0"

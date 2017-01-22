@@ -40,14 +40,14 @@ export default class RegistrationFees extends Component {
                                     <td>
                                         <table style='width:100%'>
                                             <tr>
-                                                <td className='cell'>{item.fees[0]}</td>
-                                                <td className='cell'>{item.fees[0]}</td>
-                                                <td className='cell'>{item.fees[0]}</td>
+                                                <td className='cell'>{item.currency} {item.fees[0]}/-</td>
+                                                <td className='cell'>{item.currency} {item.fees[1]}/-</td>
+                                                <td className='cell'>{item.currency} {item.fees[2]}/-</td>
                                             </tr>
                                         </table>
                                     </td>
                                     <td>
-                                        {item.preconffees}
+                                        {item.currency} {item.preconffees}/-
                                     </td>
                                 </tr>
                             );

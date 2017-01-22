@@ -98,6 +98,10 @@ app.post('/submitabstract',function(req,res){
 function serveSite(req,res){
 	if (req.cookies && req.cookies['sid']) {
 		getUserFromToken(req.cookies['sid']).then(user => {
+			if(user.paymentdata){
+				// dont send paymentdata to user
+				delete user.paymentdata;
+			}
 			res.render('index',{
 				user:JSON.stringify(user)
 			});	

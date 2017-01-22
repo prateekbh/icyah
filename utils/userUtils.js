@@ -1,6 +1,6 @@
 const UserManagement = require('user-management');
 
-function initUsers(cb){
+function initUsers(cb) {
 	const users = new UserManagement({
 		hostname: process.env.MONGO_SERVER || 'localhost',
 		port: process.env.MONGO_PORT || 27017,
@@ -15,7 +15,7 @@ function initUsers(cb){
 	});
 }
 
-function loginUser(uname, pwd){
+function loginUser(uname, pwd) {
 	return new Promise((resolve, reject)=>{
 		initUsers(users=>{
 			users.authenticateUser(uname, pwd, function(err, result) {
@@ -56,7 +56,7 @@ function getUserFromToken(token) {
 	});
 }
 
-function submitAbstractForToken(token){
+function submitAbstractForToken(token) {
 	return new Promise((resolve, reject)=>{
 		initUsers(users=>{
 			users.getExtrasForToken(token, function(err, extras) {
@@ -76,9 +76,63 @@ function submitAbstractForToken(token){
 	});
 }
 
+function registerUser(token, registeredForConf, registeredForWorkshop, occupation) {
+	return new Promise((resolve, reject)=>{
+		initUsers(users=>{
+			users.getExtrasForToken(token, function(err, extras) {
+				if (err) {
+					users.close();
+					reject(err);
+				} else {
+					const newVal = Object.assign({}, extras, {
+						registrationDone: true,
+						registeredForConf,
+						registeredForWorkshop,
+						occupation,
+					});
+					users.setExtrasForToken(token, newVal, (err) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(newVal);
+					});
+				}
+			});
+		});
+	});
+}
+
+function userPaid(token, payment_id, amount, paymentdata) {
+	return new Promise((resolve, reject)=>{
+		initUsers(users=>{
+			users.getExtrasForToken(token, function(err, extras) {
+				if (err) {
+					users.close();
+					reject(err);
+				} else {
+					const newVal = Object.assign({}, extras, {
+						paymentDone: true,
+						payment_id,
+						amount,
+						paymentdata
+					});
+					users.setExtrasForToken(token, newVal, (err) => {
+						if (err) {
+							reject(err);
+						}
+						resolve(newVal);
+					});
+				}
+			});
+		});
+	});
+}
+
 module.exports = {
     initUsers,
     loginUser,
 	getUserFromToken,
-	submitAbstractForToken
+	submitAbstractForToken,
+	registerUser,
+	userPaid,
 };

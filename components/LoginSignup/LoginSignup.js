@@ -1,7 +1,7 @@
 import {h, Component} from 'preact';
 import './LoginSignup.css';
 
-export default class Fees extends Component {
+export default class LoginSignup extends Component {
     constructor(){
         super();
         this.state = {
