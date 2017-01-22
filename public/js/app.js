@@ -1738,12 +1738,14 @@ webpackJsonp([0],[
 						return res.json();
 					}).then(function (data) {
 						if (data.done) {
+							alert('Your abstract has been submitted');
+							window.reload();
 							that.setState({
 								abstractSubmitted: true,
 								isFormSubmitting: false
 							});
 						} else {
-							throw new Error('not good ajax');
+							throw new Error('cannot submit abstract');
 						}
 					}).catch(function (e) {
 						_this2.setState({

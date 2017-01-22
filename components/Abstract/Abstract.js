@@ -40,12 +40,14 @@ export default class Abstract extends Component {
 			})
 			.then(data => {
 				if(data.done){
+					alert('Your abstract has been submitted');
+					window.reload();
 					that.setState({
 						abstractSubmitted: true,
 						isFormSubmitting: false
 					});
 				} else {
-					throw new Error('not good ajax');
+					throw new Error('cannot submit abstract');
 				}
 			}).catch(e => {
 				this.setState({
