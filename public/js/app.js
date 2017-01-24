@@ -1268,6 +1268,7 @@ webpackJsonp([0],[
 					(0, _preact.h)(
 						'div',
 						{ className: 'content-aboutus' },
+						(0, _preact.h)('img', { src: '/images/pic2.jpg' }),
 						(0, _preact.h)(
 							'h2',
 							{ className: 'typl8-gamma' },
@@ -2863,51 +2864,55 @@ webpackJsonp([0],[
 	                            'For any information / question, kindly contact :'
 	                        ),
 	                        (0, _preact.h)(
-	                            'div',
+	                            'ul',
 	                            { style: 'font-size:14px' },
 	                            (0, _preact.h)(
-	                                'div',
-	                                null,
-	                                'Dr. Jugal Kishore'
-	                            ),
-	                            (0, _preact.h)(
-	                                'div',
+	                                'li',
 	                                null,
 	                                (0, _preact.h)(
-	                                    'b',
-	                                    null,
-	                                    'Mobile:'
+	                                    'div',
+	                                    { style: 'font-size: 16px; font-weight: 700; color: tomato' },
+	                                    'Dr. Jugal Kishore'
 	                                ),
-	                                ' +91-9582792331'
-	                            ),
-	                            (0, _preact.h)(
-	                                'div',
-	                                null,
 	                                (0, _preact.h)(
-	                                    'b',
+	                                    'div',
 	                                    null,
-	                                    'EMail:'
+	                                    (0, _preact.h)(
+	                                        'b',
+	                                        null,
+	                                        'Mobile:'
+	                                    ),
+	                                    ' +91-9582792331'
 	                                ),
-	                                ' ',
 	                                (0, _preact.h)(
-	                                    'a',
-	                                    { href: 'mailto:icyah.foundation@gmail.com' },
-	                                    'icyah.foundation@gmail.com'
-	                                )
-	                            ),
-	                            (0, _preact.h)(
-	                                'div',
-	                                null,
-	                                (0, _preact.h)(
-	                                    'b',
+	                                    'div',
 	                                    null,
-	                                    'Site:'
+	                                    (0, _preact.h)(
+	                                        'b',
+	                                        null,
+	                                        'EMail:'
+	                                    ),
+	                                    ' ',
+	                                    (0, _preact.h)(
+	                                        'a',
+	                                        { href: 'mailto:icyah.foundation@gmail.com' },
+	                                        'icyah.foundation@gmail.com'
+	                                    )
 	                                ),
-	                                ' ',
 	                                (0, _preact.h)(
-	                                    'a',
-	                                    { href: 'http://icyah.org' },
-	                                    'icyah.org'
+	                                    'div',
+	                                    null,
+	                                    (0, _preact.h)(
+	                                        'b',
+	                                        null,
+	                                        'Site:'
+	                                    ),
+	                                    ' ',
+	                                    (0, _preact.h)(
+	                                        'a',
+	                                        { href: 'http://icyah.org' },
+	                                        'icyah.org'
+	                                    )
 	                                )
 	                            )
 	                        )
@@ -2916,6 +2921,11 @@ webpackJsonp([0],[
 	                        'h6',
 	                        { style: 'margin:25px 0 8px' },
 	                        'Location:'
+	                    ),
+	                    (0, _preact.h)(
+	                        'div',
+	                        { style: 'margin-bottom: 16px; font-size: 14px;' },
+	                        'Convention Hall, NDMC New Delh'
 	                    ),
 	                    (0, _preact.h)(
 	                        'div',

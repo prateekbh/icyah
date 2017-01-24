@@ -36,7 +36,7 @@ app.use(serveStatic(rootDir));
 
 app.get("/", serveSite);
 app.get("/awards", serveSite);
-app.get("/about/aboutiaah", serveSite);
+app.get("/about/iaah", serveSite);
 app.get("/registration/*", serveSite);
 app.get("/aboutus", serveSite);
 app.get("/contactus", serveSite);
