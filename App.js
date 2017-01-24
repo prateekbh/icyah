@@ -11,6 +11,7 @@ import Abstract from './components/Abstract/Abstract';
 import Cancellations from './components/Registration/Cancellation';
 import RegistrationFees from './components/Registration/RegistrationFees';
 import Register from './components/Registration/Register';
+import ContactUs from './components/ContactUs/ContactUs';
 import './type.css';
 import './App.css';
 
@@ -58,6 +59,7 @@ export default class App extends Component {
               doneRegistration={this.doneRegistration.bind(this)}
               paymentDone={this.paymentDone.bind(this)}
               path='/registration/register' />
+            <ContactUs path='/contactus' />
           </Router>
         </div>
       </div>

@@ -21,14 +21,14 @@ export default class RegistrationFees extends Component {
                         <td>
                             <table style='width:100%'>
                                 <tr>
-                                    <td className='cell'>Early bird (till 20-1-2017)</td>
-                                    <td className='cell'>Till 20-2-2017</td>
+                                    <td className='cell'>Early bird (till 20-2-2017)</td>
+                                    <td className='cell'>Till 20-3-2017</td>
                                     <td className='cell'>On Spot</td>
                                 </tr>
                             </table>
                         </td>
                         <td>
-                            Registration open till 10 - 2 2017
+                            Registration open till 10 - 3 - 2017
                         </td>
                     </tr>
                     {

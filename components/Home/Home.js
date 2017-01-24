@@ -15,7 +15,7 @@ export default class Home extends Component {
 					<div className='dates'>
 						<div className='title'> Important Dates </div>
 						<div className='date'>Registrations open soon.</div>
-						<div className='date'>Abstract submissions open.</div>
+						<div className='date'>Last date for abstract submission: 28th Feb</div>
 					</div>
 					<div className='venue'>
 						<div className='name'> Venue: <div>Convention Hall, NDMC New Delhi</div></div>

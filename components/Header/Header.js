@@ -75,13 +75,13 @@ export default class Header extends Component{
 			<header>
 				<div className='logos'>
 					<div className='logo-icyah box'>
-						<img src='/images/logo.png' width="162"/>
+						<img className='logo' src='/images/logo.png' />
 					</div>
 					<div className='desc-icyah box'>
 						<div className='title'>ICYAH 2017</div>
 						<div className='desc'>International conference on Youth and Adolescent Health</div>
 						<div className='subtitle'>Young Generation: Our Global Edge</div>
-						<div className='details'>4th - 6th April | Convention Center, NDMC, New Delhi</div>
+						<div className='details'>14th - 16th April | Convention Center, NDMC, New Delhi</div>
 					</div>
 					<div className='logo-iaah box'>
 						<img className='logo-iaah' src='/images/iaahlogo.png' width="162"/>

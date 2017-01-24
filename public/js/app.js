@@ -81,6 +81,10 @@ webpackJsonp([0],[
 
 	var _Register2 = _interopRequireDefault(_Register);
 
+	var _ContactUs = __webpack_require__(41);
+
+	var _ContactUs2 = _interopRequireDefault(_ContactUs);
+
 	__webpack_require__(35);
 
 	__webpack_require__(37);
@@ -159,7 +163,8 @@ webpackJsonp([0],[
 	              doneLogin: this.doneLogin.bind(this),
 	              doneRegistration: this.doneRegistration.bind(this),
 	              paymentDone: this.paymentDone.bind(this),
-	              path: '/registration/register' })
+	              path: '/registration/register' }),
+	            (0, _preact.h)(_ContactUs2.default, { path: '/contactus' })
 	          )
 	        )
 	      );
@@ -618,7 +623,7 @@ webpackJsonp([0],[
 						(0, _preact.h)(
 							'div',
 							{ className: 'logo-icyah box' },
-							(0, _preact.h)('img', { src: '/images/logo.png', width: '162' })
+							(0, _preact.h)('img', { className: 'logo', src: '/images/logo.png' })
 						),
 						(0, _preact.h)(
 							'div',
@@ -641,7 +646,7 @@ webpackJsonp([0],[
 							(0, _preact.h)(
 								'div',
 								{ className: 'details' },
-								'4th - 6th April | Convention Center, NDMC, New Delhi'
+								'14th - 16th April | Convention Center, NDMC, New Delhi'
 							)
 						),
 						(0, _preact.h)(
@@ -787,7 +792,7 @@ webpackJsonp([0],[
 								(0, _preact.h)(
 									'div',
 									{ className: 'date' },
-									'Abstract submissions open.'
+									'Last date for abstract submission: 28th Feb'
 								)
 							),
 							(0, _preact.h)(
@@ -2307,12 +2312,12 @@ webpackJsonp([0],[
 	                                        (0, _preact.h)(
 	                                            'td',
 	                                            { className: 'cell' },
-	                                            'Early bird (till 20-1-2017)'
+	                                            'Early bird (till 20-2-2017)'
 	                                        ),
 	                                        (0, _preact.h)(
 	                                            'td',
 	                                            { className: 'cell' },
-	                                            'Till 20-2-2017'
+	                                            'Till 20-3-2017'
 	                                        ),
 	                                        (0, _preact.h)(
 	                                            'td',
@@ -2325,7 +2330,7 @@ webpackJsonp([0],[
 	                            (0, _preact.h)(
 	                                'td',
 	                                null,
-	                                'Registration open till 10 - 2 2017'
+	                                'Registration open till 10 - 3 - 2017'
 	                            )
 	                        ),
 	                        _feesUtils.RegistrationFeesData.map(function (item) {
@@ -2787,6 +2792,60 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 40 */,
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ContactUS = function (_Component) {
+		_inherits(ContactUS, _Component);
+
+		function ContactUS() {
+			_classCallCheck(this, ContactUS);
+
+			return _possibleConstructorReturn(this, (ContactUS.__proto__ || Object.getPrototypeOf(ContactUS)).apply(this, arguments));
+		}
+
+		_createClass(ContactUS, [{
+			key: 'render',
+			value: function render() {
+				return (0, _preact.h)(
+					'div',
+					{ className: 'page page-contact us' },
+					(0, _preact.h)(
+						'div',
+						{ className: 'content-contact us' },
+						(0, _preact.h)(
+							'h2',
+							{ className: 'typl8-gamma' },
+							'Contact Us'
+						)
+					)
+				);
+			}
+		}]);
+
+		return ContactUS;
+	}(_preact.Component);
+
+	exports.default = ContactUS;
 
 /***/ }
 ]);

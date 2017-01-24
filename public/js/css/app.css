@@ -15,20 +15,23 @@ header .logos .box{
 	display: flex;
 }
 
-header .logos .logo-icyah{
-	-webkit-box-pack: end;
-	    -ms-flex-pack: end;
-	        justify-content: flex-end;
-	-ms-flex-item-align: center;
-	    -ms-grid-row-align: center;
-	    align-self: center;
-	padding: 32px;
+header .logos .logo{
+	height: 70px;
 }
 
-header .logos .logo-iaah{
+header .logos .logo-icyah{
 	-webkit-box-pack: start;
 	    -ms-flex-pack: start;
 	        justify-content: flex-start;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
+}
+
+header .logos .logo-iaah{
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 	-ms-flex-item-align: center;
 	    -ms-grid-row-align: center;
 	    align-self: center;
@@ -45,7 +48,7 @@ header .logos .desc-icyah{
 	-webkit-box-flex: 3;
 	    -ms-flex: 3;
 	        flex: 3;
-	padding: 16px;
+	padding: 25px 0 16px;
 }
 
 header .logos .desc-icyah .title{

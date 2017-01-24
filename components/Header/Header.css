@@ -7,20 +7,22 @@ header{
 			flex: 1;
 			display: flex;
 		}
+		.logo{
+			height: 70px;
+		}
 		.logo-icyah{
-			justify-content: flex-end;
+			justify-content: flex-start;
 			align-self: center;
-			padding: 32px;
 		}
 		.logo-iaah{
-			justify-content: flex-start;
+			justify-content: flex-end;
 			align-self: center;
 		}
 		.desc-icyah{
 			flex-direction: column;
 			align-items: center;
 			flex: 3;
-			padding: 16px;
+			padding: 25px 0 16px;
 			.title{
 				background-color: rgb(208,0, 94);
 				padding: 8px;
