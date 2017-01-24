@@ -178,17 +178,23 @@ header .sublink{
 	header .link{
 		display: block;
 	}
-}.page.page-home{
+}.slideshow{
+    height: 350px;
+    overflow: hidden;
+}
+.slideshow .slide-container{
+    white-space: nowrap;
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+}
+.page.page-home{
 	margin-top: 0px;
 }
 .page.page-home .mobCover{
 	position: relative;
 	margin-bottom:15px;
-	height: 400px;
+	height: 350px;
 	width: 100%;
-	background-position: center;
-	background-size: cover;
-	background-image: url('/images/cover.jpg');
 }
 .page.page-home .mobCover .link{
 	position: absolute;

@@ -1,13 +1,20 @@
 import {h, Component} from 'preact';
 import {Link} from 'preact-router';
+import Slideshow from '../Slideshow/Slideshow';
 import './Home.css'
+
+const images=[
+	'/images/slidepic1.jpg',
+	'/images/slidepic2.jpg',
+	'/images/slidepic3.jpg',
+];
 
 export default class Home extends Component {
  render(){
 	 return (
 		 <div className='page page-home'>
 			<div class='mobCover'>
-
+				<Slideshow timer={3000} images={images} />
 				<a href='/public/pdf/brochure.pdf' target='_blank' className='link link-brocure'>Brochure</a>
 			</div>
 			<div className='content-home'>
@@ -20,7 +27,7 @@ export default class Home extends Component {
 					<div className='venue'>
 						<div className='name'> Venue: <div>Convention Hall, NDMC New Delhi</div></div>
 						<div>
-							<img className='pic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHOHCSBJjKJbpX_wj2_x4Lerjx_WiOiNvEg5lKILTKVBHTWDNU'/>
+							<img className='pic' src='/images/venue.jpg'/>
 						</div>
 					</div>
 				</div>

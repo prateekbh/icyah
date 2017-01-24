@@ -738,13 +738,21 @@ webpackJsonp([0],[
 
 	var _preactRouter = __webpack_require__(3);
 
+	var _Slideshow = __webpack_require__(42);
+
+	var _Slideshow2 = _interopRequireDefault(_Slideshow);
+
 	__webpack_require__(10);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var images = ['/images/slidepic1.jpg', '/images/slidepic2.jpg', '/images/slidepic3.jpg'];
 
 	var Home = function (_Component) {
 		_inherits(Home, _Component);
@@ -764,6 +772,7 @@ webpackJsonp([0],[
 					(0, _preact.h)(
 						'div',
 						{ 'class': 'mobCover' },
+						(0, _preact.h)(_Slideshow2.default, { timer: 3000, images: images }),
 						(0, _preact.h)(
 							'a',
 							{ href: '/public/pdf/brochure.pdf', target: '_blank', className: 'link link-brocure' },
@@ -811,7 +820,7 @@ webpackJsonp([0],[
 								(0, _preact.h)(
 									'div',
 									null,
-									(0, _preact.h)('img', { className: 'pic', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHOHCSBJjKJbpX_wj2_x4Lerjx_WiOiNvEg5lKILTKVBHTWDNU' })
+									(0, _preact.h)('img', { className: 'pic', src: '/images/venue.jpg' })
 								)
 							)
 						),
@@ -2967,6 +2976,87 @@ webpackJsonp([0],[
 	}(_preact.Component);
 
 	exports.default = ContactUS;
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _preact = __webpack_require__(1);
+
+	__webpack_require__(43);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Slideshow = function (_Component) {
+	    _inherits(Slideshow, _Component);
+
+	    function Slideshow() {
+	        _classCallCheck(this, Slideshow);
+
+	        var _this = _possibleConstructorReturn(this, (Slideshow.__proto__ || Object.getPrototypeOf(Slideshow)).call(this));
+
+	        _this.state = {
+	            index: 0
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Slideshow, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var _this2 = this;
+
+	            setInterval(function () {
+	                if (_this2.state.index === 2) {
+	                    _this2.setState({
+	                        index: 0
+	                    });
+	                } else {
+	                    _this2.setState({
+	                        index: _this2.state.index + 1
+	                    });
+	                }
+	            }, this.props.timer);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return (0, _preact.h)(
+	                'div',
+	                { className: 'slideshow' },
+	                (0, _preact.h)(
+	                    'div',
+	                    { className: 'slide-container', style: 'transform:translateX(-' + this.state.index * 1024 + 'px)' },
+	                    (0, _preact.h)('img', { className: 'slide', src: this.props.images[0] }),
+	                    (0, _preact.h)('img', { className: 'slide', src: this.props.images[1] }),
+	                    (0, _preact.h)('img', { className: 'slide', src: this.props.images[2] })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Slideshow;
+	}(_preact.Component);
+
+	exports.default = Slideshow;
+
+/***/ },
+/* 43 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);

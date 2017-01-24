@@ -1,0 +1,8 @@
+.slideshow{
+    height: 350px;
+    overflow: hidden;
+    .slide-container{
+        white-space: nowrap;
+        transition-duration: 300ms;
+    }
+}

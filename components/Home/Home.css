@@ -3,11 +3,8 @@
 	.mobCover{
 		position: relative;
 		margin-bottom:15px;
-		height: 400px;
+		height: 350px;
 		width: 100%;
-		background-position: center;
-		background-size: cover;
-		background-image: url('/images/cover.jpg');
 		.link{
 			position: absolute;
 			text-align: center;
