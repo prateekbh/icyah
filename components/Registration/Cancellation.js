@@ -9,7 +9,7 @@ export default class Cancellation extends Component {
 				<p>
 					<div>The registered delegate be aware of that all registration and accommodation fees (if applicable) must be paid in full before attending the conference.</div>
 
-                    <div>Any amendments and/or cancellations must be notified in writing to the Conference Organisers via email  icyah.foundation@gmail.com</div>
+                    <div>Any amendments and/or cancellations must be notified in writing to the Conference Organisers via email  <a href='mailto:icyah.foundation@gmail.com'>icyah.foundation@gmail.com</a></div>
 
                     <div>Cancellations received in writing before 30 March, 2017 will be credited back to the registered delegate in full less 33% of the fee paid.</div>
 
@@ -19,7 +19,7 @@ export default class Cancellation extends Component {
 
                     <div>Kindly note that the refund money will be credited back to the payee account after the event is over and latest by May 31, 2017 .</div>
 
-                    <div>Substitute delegates are welcome without any penalty. Please advise the Conference Organisers by email of any name changes as soon as possible at  icyah.foundation@gmail.com</div>
+                    <div>Substitute delegates are welcome without any penalty. Please advise the Conference Organisers by email of any name changes as soon as possible at  <a href='mailto:icyah.foundation@gmail.com'>icyah.foundation@gmail.com</a></div>
 				</p>
 			</div>
 		 </div>

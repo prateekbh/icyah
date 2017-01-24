@@ -39,6 +39,7 @@ app.get("/awards", serveSite);
 app.get("/about/aboutiaah", serveSite);
 app.get("/registration/*", serveSite);
 app.get("/aboutus", serveSite);
+app.get("/contactus", serveSite);
 app.get("/fees", serveSite);
 app.get("/abstract", serveSite);
 app.use("/user", userApi);

@@ -2183,17 +2183,22 @@ webpackJsonp([0],[
 							(0, _preact.h)(
 								'div',
 								null,
-								'Any amendments and/or cancellations must be notified in writing to the Conference Organisers via email secretariat@conferenceoeh.com'
+								'Any amendments and/or cancellations must be notified in writing to the Conference Organisers via email  ',
+								(0, _preact.h)(
+									'a',
+									{ href: 'mailto:icyah.foundation@gmail.com' },
+									'icyah.foundation@gmail.com'
+								)
 							),
 							(0, _preact.h)(
 								'div',
 								null,
-								'Cancellations received in writing before July 31 2016 will be credited back to the registered delegate in full less 33% of the fee paid.'
+								'Cancellations received in writing before 30 March, 2017 will be credited back to the registered delegate in full less 33% of the fee paid.'
 							),
 							(0, _preact.h)(
 								'div',
 								null,
-								'50% of the registration amount will be credited back to the registered delegate on cancellations received in writing between August 1 - 31, 2016 .'
+								'50% of the registration amount will be credited back to the registered delegate on cancellations received in writing between 1st March, 2017 .'
 							),
 							(0, _preact.h)(
 								'div',
@@ -2203,12 +2208,17 @@ webpackJsonp([0],[
 							(0, _preact.h)(
 								'div',
 								null,
-								'Kindly note that the refund money will be credited back to the payee account after the event is over and latest by October 31, 2016 .'
+								'Kindly note that the refund money will be credited back to the payee account after the event is over and latest by May 31, 2017 .'
 							),
 							(0, _preact.h)(
 								'div',
 								null,
-								'Substitute delegates are welcome without any penalty. Please advise the Conference Organisers by email of any name changes as soon as possible at secretariat@conferenceoeh.com'
+								'Substitute delegates are welcome without any penalty. Please advise the Conference Organisers by email of any name changes as soon as possible at  ',
+								(0, _preact.h)(
+									'a',
+									{ href: 'mailto:icyah.foundation@gmail.com' },
+									'icyah.foundation@gmail.com'
+								)
 							)
 						)
 					)
@@ -2801,7 +2811,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2815,34 +2825,135 @@ webpackJsonp([0],[
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ContactUS = function (_Component) {
-		_inherits(ContactUS, _Component);
+	    _inherits(ContactUS, _Component);
 
-		function ContactUS() {
-			_classCallCheck(this, ContactUS);
+	    function ContactUS() {
+	        _classCallCheck(this, ContactUS);
 
-			return _possibleConstructorReturn(this, (ContactUS.__proto__ || Object.getPrototypeOf(ContactUS)).apply(this, arguments));
-		}
+	        return _possibleConstructorReturn(this, (ContactUS.__proto__ || Object.getPrototypeOf(ContactUS)).apply(this, arguments));
+	    }
 
-		_createClass(ContactUS, [{
-			key: 'render',
-			value: function render() {
-				return (0, _preact.h)(
-					'div',
-					{ className: 'page page-contact us' },
-					(0, _preact.h)(
-						'div',
-						{ className: 'content-contact us' },
-						(0, _preact.h)(
-							'h2',
-							{ className: 'typl8-gamma' },
-							'Contact Us'
-						)
-					)
-				);
-			}
-		}]);
+	    _createClass(ContactUS, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            setTimeout(function () {
+	                window.init_map();
+	            }, 2000);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return (0, _preact.h)(
+	                'div',
+	                { className: 'page page-contact us' },
+	                (0, _preact.h)(
+	                    'div',
+	                    { className: 'content-contact us' },
+	                    (0, _preact.h)(
+	                        'h2',
+	                        { className: 'typl8-gamma' },
+	                        'Contact Us'
+	                    ),
+	                    (0, _preact.h)(
+	                        'div',
+	                        null,
+	                        (0, _preact.h)(
+	                            'h6',
+	                            null,
+	                            'For any information / question, kindly contact :'
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            { style: 'font-size:14px' },
+	                            (0, _preact.h)(
+	                                'div',
+	                                null,
+	                                'Dr. Jugal Kishore'
+	                            ),
+	                            (0, _preact.h)(
+	                                'div',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'b',
+	                                    null,
+	                                    'Mobile:'
+	                                ),
+	                                ' +91-9582792331'
+	                            ),
+	                            (0, _preact.h)(
+	                                'div',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'b',
+	                                    null,
+	                                    'EMail:'
+	                                ),
+	                                ' ',
+	                                (0, _preact.h)(
+	                                    'a',
+	                                    { href: 'mailto:icyah.foundation@gmail.com' },
+	                                    'icyah.foundation@gmail.com'
+	                                )
+	                            ),
+	                            (0, _preact.h)(
+	                                'div',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'b',
+	                                    null,
+	                                    'Site:'
+	                                ),
+	                                ' ',
+	                                (0, _preact.h)(
+	                                    'a',
+	                                    { href: 'http://icyah.org' },
+	                                    'icyah.org'
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    (0, _preact.h)(
+	                        'h6',
+	                        { style: 'margin:25px 0 8px' },
+	                        'Location:'
+	                    ),
+	                    (0, _preact.h)(
+	                        'div',
+	                        { style: 'overflow:hidden;height:350px;width:700px;' },
+	                        (0, _preact.h)('div', { id: 'gmap_canvas', style: 'height:440px;width:700px;' }),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)(
+	                                'small',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'a',
+	                                    { href: 'http://embedgooglemaps.com' },
+	                                    'embed google maps'
+	                                )
+	                            )
+	                        ),
+	                        (0, _preact.h)(
+	                            'div',
+	                            null,
+	                            (0, _preact.h)(
+	                                'small',
+	                                null,
+	                                (0, _preact.h)(
+	                                    'a',
+	                                    { href: 'https://privacypolicygenerator.info' },
+	                                    'privacy policy generator'
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
 
-		return ContactUS;
+	    return ContactUS;
 	}(_preact.Component);
 
 	exports.default = ContactUS;

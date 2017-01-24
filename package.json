@@ -41,5 +41,8 @@
   },
   "eslintConfig": {
     "extends": "./node_modules/preact-scripts/config/eslint.js"
+  },
+  "devDependencies": {
+    "razorpay": "^1.2.1"
   }
 }

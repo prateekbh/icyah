@@ -6,6 +6,8 @@
     <link rel="shortcut icon" href="./src/favicon.ico">
     <link rel="stylesheet" href="/public/js/css/app.css">
     <title>ICYAH</title>
+    <script defer src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
   </head>
   <body>
     <div id="root"></div>
@@ -14,6 +16,7 @@
     </script>
     <script src="/public/js/vendor.bundle.js"></script>
     <script src="/public/js/app.js"></script>
-    <script defer src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type='text/javascript'>function init_map(){
+      var myOptions = {zoom:10,center:new google.maps.LatLng(28.6281342,77.21485499999994),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.6281342,77.21485499999994)});infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>Convention Hall, NDMC New Delhi<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}</script>
   </body>
 </html>
