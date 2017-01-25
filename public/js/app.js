@@ -1844,7 +1844,7 @@ webpackJsonp([0],[
 								)
 							)
 						),
-						this.props.user && this.props.user.email ? this.props.user.abstractSubmitted ? (0, _preact.h)(
+						this.props.user && this.props.user.email ? this.props.user.abstractSubmitted || this.state.abstractSubmitted ? (0, _preact.h)(
 							'div',
 							null,
 							(0, _preact.h)(

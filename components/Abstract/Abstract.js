@@ -81,7 +81,7 @@ export default class Abstract extends Component {
 					</p>
 					{ 
 						(this.props.user && this.props.user.email) ?
-						(this.props.user.abstractSubmitted ?
+						(this.props.user.abstractSubmitted || this.state.abstractSubmitted ?
 							<div>
 								<div className='success'>
 									<svg className='icon-success' xmlns="http://www.w3.org/2000/svg" fill="#000000" height="24" viewBox="0 0 24 24" width="24">
